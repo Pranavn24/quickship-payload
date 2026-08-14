@@ -4,9 +4,9 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 import { buildConfig } from 'payload'
 
-import { ShippingRoutePages } from './collections/ShippingRoutePages.ts'
-import { Leads } from './collections/Leads.ts'
-import { Users } from './collections/Users.ts'
+import { ShippingRoutePages } from './collections/ShippingRoutePages'
+import { Leads } from './collections/Leads'
+import { Users } from './collections/Users'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
