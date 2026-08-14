@@ -1,0 +1,429 @@
+
+/* =========================================================
+   QUICKSHIFT ADMIN DESIGN SYSTEM
+   Based on QuickShift customer-facing design
+   ========================================================= */
+
+:root {
+  --qs-blue: #1d22d2;
+  --qs-blue-dark: #171bb0;
+  --qs-blue-soft: #eef0ff;
+
+  --qs-yellow: #ffc400;
+
+  --qs-black: #16181e;
+  --qs-text: #4f5663;
+  --qs-muted: #7b8491;
+
+  --qs-white: #ffffff;
+  --qs-bg: #f7f8fa;
+
+  --qs-border: #e1e4e8;
+  --qs-border-light: #eceef1;
+
+  --qs-radius: 14px;
+  --qs-radius-small: 9px;
+
+  --qs-shadow:
+    0 2px 8px rgba(22, 24, 30, 0.04),
+    0 12px 32px rgba(22, 24, 30, 0.04);
+}
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+* {
+  font-family: 'Outfit', Helvetica, Arial, sans-serif !important;
+}
+
+html,
+body {
+  background: var(--qs-bg) !important;
+  color: var(--qs-black) !important;
+}
+
+body {
+  font-size: 15px;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.app-header {
+  height: 72px !important;
+  background: var(--qs-white) !important;
+  border-bottom: 1px solid var(--qs-border-light) !important;
+  box-shadow: 0 1px 3px rgba(22, 24, 30, 0.03);
+}
+
+.app-header__content {
+  padding-left: 28px !important;
+  padding-right: 28px !important;
+}
+
+/* =========================================================
+   QUICKSHIFT BRANDING
+   ========================================================= */
+
+.app-header::before {
+  content: 'QuickShift';
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: var(--qs-black);
+  margin-right: 30px;
+}
+
+.app-header::after {
+  content: '';
+  width: 7px;
+  height: 7px;
+  background: var(--qs-yellow);
+  border-radius: 50%;
+  margin-left: -25px;
+  margin-right: 20px;
+}
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.nav,
+.template-default__nav {
+  background: var(--qs-white) !important;
+  border-right: 1px solid var(--qs-border-light) !important;
+  padding: 20px 14px !important;
+}
+
+.nav-group {
+  margin-bottom: 24px;
+}
+
+.nav-group__label {
+  color: var(--qs-muted) !important;
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase;
+  padding-left: 12px !important;
+  margin-bottom: 8px;
+}
+
+.nav__link {
+  color: var(--qs-black) !important;
+  border-radius: 10px !important;
+  padding: 11px 13px !important;
+  margin: 3px 0 !important;
+  font-weight: 500 !important;
+  transition: all 0.15s ease !important;
+}
+
+.nav__link:hover {
+  background: var(--qs-blue-soft) !important;
+  color: var(--qs-blue) !important;
+}
+
+.nav__link.active,
+.nav__link--active {
+  background: var(--qs-blue) !important;
+  color: var(--qs-white) !important;
+  font-weight: 600 !important;
+  box-shadow: 0 5px 14px rgba(29, 34, 210, 0.18);
+}
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+.template-default__main {
+  background: var(--qs-bg) !important;
+}
+
+.main {
+  padding-top: 30px !important;
+}
+
+/* =========================================================
+   PAGE HEADINGS
+   ========================================================= */
+
+h1,
+.doc-header h1 {
+  color: var(--qs-black) !important;
+  font-size: 34px !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.045em !important;
+  line-height: 1.1 !important;
+}
+
+h2 {
+  color: var(--qs-black) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.025em !important;
+}
+
+h3 {
+  color: var(--qs-black) !important;
+  font-weight: 600 !important;
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.btn {
+  border-radius: 999px !important;
+  min-height: 42px;
+  padding: 9px 20px !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.01em;
+  transition: all 0.18s ease !important;
+}
+
+.btn--style-primary {
+  background: var(--qs-blue) !important;
+  border-color: var(--qs-blue) !important;
+  color: white !important;
+  box-shadow: 0 5px 14px rgba(29, 34, 210, 0.16);
+}
+
+.btn--style-primary:hover {
+  background: var(--qs-blue-dark) !important;
+  border-color: var(--qs-blue-dark) !important;
+  transform: translateY(-1px);
+}
+
+.btn--style-secondary {
+  background: white !important;
+  border: 1px solid var(--qs-border) !important;
+  color: var(--qs-black) !important;
+}
+
+.btn--style-secondary:hover {
+  border-color: var(--qs-blue) !important;
+  color: var(--qs-blue) !important;
+  background: var(--qs-blue-soft) !important;
+}
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+.card,
+.dashboard__card,
+.collection-list__group .card,
+.group,
+.card--has-onclick {
+  background: var(--qs-white) !important;
+  border: 1px solid var(--qs-border-light) !important;
+  border-radius: var(--qs-radius) !important;
+  box-shadow: var(--qs-shadow) !important;
+}
+
+.card:hover {
+  border-color: rgba(29, 34, 210, 0.25) !important;
+}
+
+/* =========================================================
+   INPUTS
+   ========================================================= */
+
+input:not([type='checkbox']):not([type='radio']),
+textarea,
+select,
+.rs__control {
+  background: white !important;
+  border: 1px solid var(--qs-border) !important;
+  border-radius: var(--qs-radius-small) !important;
+  color: var(--qs-black) !important;
+  min-height: 44px;
+  transition: all 0.15s ease !important;
+}
+
+input:not([type='checkbox']):not([type='radio']):hover,
+textarea:hover,
+select:hover {
+  border-color: #c6cad1 !important;
+}
+
+input:not([type='checkbox']):not([type='radio']):focus,
+textarea:focus,
+select:focus,
+.rs__control--is-focused {
+  border-color: var(--qs-blue) !important;
+  box-shadow: 0 0 0 3px rgba(29, 34, 210, 0.10) !important;
+}
+
+label {
+  color: var(--qs-black) !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+}
+
+.field-description {
+  color: var(--qs-muted) !important;
+}
+
+/* =========================================================
+   TABLES
+   ========================================================= */
+
+.table {
+  background: white !important;
+  border: 1px solid var(--qs-border-light) !important;
+  border-radius: var(--qs-radius) !important;
+  overflow: hidden;
+}
+
+.table thead th {
+  background: #fafbfc !important;
+  color: var(--qs-muted) !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--qs-border-light) !important;
+}
+
+.table tbody td {
+  color: var(--qs-black) !important;
+  border-bottom: 1px solid #f0f1f3 !important;
+}
+
+.table tbody tr {
+  transition: background 0.15s ease;
+}
+
+.table tbody tr:hover {
+  background: var(--qs-blue-soft) !important;
+}
+
+.cell-link,
+.table a {
+  color: var(--qs-blue) !important;
+  font-weight: 500;
+}
+
+/* =========================================================
+   STATUS PILLS
+   ========================================================= */
+
+.pill,
+.pill--style-light {
+  background: var(--qs-blue-soft) !important;
+  color: var(--qs-blue) !important;
+  border-radius: 999px !important;
+  border: none !important;
+  font-weight: 600 !important;
+}
+
+.pill--style-success {
+  background: #e9f8ef !important;
+  color: #168044 !important;
+}
+
+.pill--style-warning {
+  background: #fff6d6 !important;
+  color: #9a7100 !important;
+}
+
+.pill--style-error {
+  background: #fff0f0 !important;
+  color: #c62828 !important;
+}
+
+/* =========================================================
+   LIST / DOCUMENT HEADER
+   ========================================================= */
+
+.list-header,
+.doc-controls {
+  background: transparent !important;
+}
+
+.doc-header {
+  margin-bottom: 24px !important;
+}
+
+/* =========================================================
+   COLLECTION LIST
+   ========================================================= */
+
+.collection-list__header {
+  border-bottom: 1px solid var(--qs-border-light) !important;
+}
+
+.collection-list__list {
+  background: transparent !important;
+}
+
+/* =========================================================
+   DASHBOARD
+   ========================================================= */
+
+.dashboard {
+  max-width: 1400px;
+}
+
+.dashboard__card {
+  padding: 24px !important;
+}
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+a {
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: var(--qs-blue);
+}
+
+/* =========================================================
+   CHECKBOXES / RADIO
+   ========================================================= */
+
+input[type='checkbox'],
+input[type='radio'] {
+  accent-color: var(--qs-blue) !important;
+}
+
+/* =========================================================
+   YELLOW QUICKSHIFT ACCENT
+   ========================================================= */
+
+.qs-accent-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: var(--qs-yellow);
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d5d8df;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b8bdc7;
+}
+

@@ -1,0 +1,144 @@
+      <section class="qs-hero position-relative overflow-hidden py-5">
+        <img
+          class="qs-hero__wave position-absolute bottom-0 start-50 translate-middle-x opacity-25 d-none d-md-block"
+          src="/assets/vector.svg"
+          alt=""
+        />
+        <div class="container-xl position-relative">
+          <div class="row align-items-start g-5">
+            <div class="col-lg-6 d-flex flex-column gap-3">
+              <span class="qs-badge-live d-inline-flex align-items-center gap-2">
+                <span class="qs-dot-yellow"></span>
+                <span class="text-muted small fw-medium">Updated March · Live Rates</span>
+              </span>
+              <h1 class="qs-hero__title fw-semibold mb-0">
+                {{H1}}
+              </h1>
+              <p class="text-secondary fs-6 lh-lg">
+                {{SUBHEAD}}
+              </p>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="qs-tag"
+                  ><img src="/assets/check.svg" width="14" alt="" /> Rates from
+                  &#8377;{{PRICE}} / 500g</span
+                >
+                <span class="qs-tag"
+                  ><img src="/assets/check.svg" width="14" alt="" /> Express:
+                  {{DAYS}} Day Delivery</span
+                >
+                <span class="qs-tag"
+                  ><img src="/assets/check.svg" width="14" alt="" /> 25+ Courier
+                  Partners</span
+                >
+                <span class="qs-tag"
+                  ><img src="/assets/check.svg" width="14" alt="" /> COD
+                  Available</span
+                >
+                <span class="qs-tag"
+                  ><img src="/assets/check.svg" width="14" alt="" /> Free
+                  Returns</span
+                >
+              </div>
+              <div class="d-flex flex-wrap gap-3 mt-2">
+                <a href="#rate-table" class="btn qs-btn-dark rounded-pill px-4 py-2">
+                  <img
+                    src="/assets/calendar-check-01.svg"
+                    width="20"
+                    alt=""
+                    class="me-2"
+                  />View Rate Table
+                </a>
+                <a href="#quote-form" class="btn btn-outline-secondary rounded-pill px-4 py-2" style="font-family: 'Outfit', sans-serif;">Get Custom Quote</a>
+              </div>
+            </div>
+            <div class="col-lg-6" id="quote-form">
+              <div class="card border rounded-4 p-4 shadow-sm" style="font-family: 'Outfit', sans-serif;">
+                <h2 class="h5 fw-bold mb-1">Get a Custom Quote</h2>
+                <p class="text-secondary small mb-3">Estimate your Delhi &#8594; Mumbai shipping cost instantly</p>
+                <form id="quoteForm" class="needs-validation" novalidate>
+                  <div class="row g-3">
+                    <div class="col-6">
+                      <label class="form-label qs-label" for="weightInput">Actual Weight (kg) <span class="text-danger">*</span></label>
+                      <input
+                        type="number"
+                        id="weightInput"
+                        class="form-control form-control-sm"
+                        value="1"
+                        min="0.1"
+                        step="0.1"
+                        required
+                      />
+                      <div class="invalid-feedback">Please enter a valid weight (min 0.1 kg).</div>
+                    </div>
+                    <div class="col-6">
+                      <label class="form-label qs-label" for="courierSelect">Courier Partner <span class="text-danger">*</span></label>
+                      <select id="courierSelect" class="form-select form-select-sm" required>
+                        <option value="">Choose courier…</option>
+                        <option>Delhivery</option>
+                        <option>XpressBees</option>
+                        <option>Ekart</option>
+                        <option>DTDC</option>
+                        <option>BlueDart</option>
+                        <option>Shadowfax</option>
+                      </select>
+                      <div class="invalid-feedback">Please select a courier partner.</div>
+                    </div>
+                    <div class="col-12">
+                      <label class="form-label qs-label">Dimensions (cm) &#8212; for volumetric weight</label>
+                    </div>
+                    <div class="col-6">
+                      <label class="form-label qs-label" for="lbInput">Length &#215; Breadth</label>
+                      <input type="number" id="lbInput" class="form-control form-control-sm" value="30" min="1" />
+                      <div class="invalid-feedback">Enter a positive value.</div>
+                    </div>
+                    <div class="col-6">
+                      <label class="form-label qs-label" for="heightInput">Height</label>
+                      <input type="number" id="heightInput" class="form-control form-control-sm" value="10" min="1" />
+                      <div class="invalid-feedback">Enter a positive value.</div>
+                    </div>
+                    <div class="col-6">
+                      <label class="form-label qs-label" for="modeSelect">Shipment Mode <span class="text-danger">*</span></label>
+                      <select id="modeSelect" class="form-select form-select-sm" required>
+                        <option value="">Choose mode…</option>
+                        <option>Surface</option>
+                        <option>Air Express</option>
+                      </select>
+                      <div class="invalid-feedback">Please select a shipment mode.</div>
+                    </div>
+                    <div class="col-6">
+                      <label class="form-label qs-label" for="paymentSelect">Payment Mode <span class="text-danger">*</span></label>
+                      <select id="paymentSelect" class="form-select form-select-sm" required>
+                        <option value="">Choose payment…</option>
+                        <option>Prepaid</option>
+                        <option>COD</option>
+                      </select>
+                      <div class="invalid-feedback">Please select a payment mode.</div>
+                    </div>
+                    <div class="col-12">
+                      <button type="submit" class="btn qs-btn-dark w-100 rounded-pill">
+                        <img
+                          src="/assets/calendar-check-01.svg"
+                          width="18"
+                          alt=""
+                          class="me-2"
+                        />Calculate Shipping Cost &#8594;
+                      </button>
+                    </div>
+                    <div class="col-12" id="quoteSuccess" style="display:none">
+                      <div class="alert alert-success rounded-3 py-2 px-3 small mb-0">
+                        <i class="bi bi-check-circle-fill me-1"></i> Quote calculated! Our team will follow up shortly.
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <p class="small mb-0 text-muted">
+                        *Estimated rates. Actual charges may vary.
+                        <a href="#" class="text-dark fw-medium">Get exact quote</a> &#8594;
+                      </p>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>

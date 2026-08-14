@@ -1,0 +1,88 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url("https://fonts.googleapis.com/css?family=Outfit:500,400,600|Poppins:700,var(--text-xl-regular-font-weight),500,400,var(--text-md-medium-font-weight),600|Plus+Jakarta+Sans:800|Inter:var(--text-xs-medium-font-weight),600");
+* {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0px;
+  height: 100%;
+}
+/* a blue color as a generic focus style */
+button:focus-visible {
+  outline: 2px solid #4a90e2 !important;
+  outline: -webkit-focus-ring-color auto 5px !important;
+}
+a {
+  text-decoration: none;
+}
+
+/* ── Scroll-reveal ──────────────────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.reveal--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* stagger children inside a grid/list */
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.reveal-stagger.reveal--visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-stagger.reveal--visible > *:nth-child(1)  { transition-delay: 0.05s; }
+.reveal-stagger.reveal--visible > *:nth-child(2)  { transition-delay: 0.12s; }
+.reveal-stagger.reveal--visible > *:nth-child(3)  { transition-delay: 0.19s; }
+.reveal-stagger.reveal--visible > *:nth-child(4)  { transition-delay: 0.26s; }
+.reveal-stagger.reveal--visible > *:nth-child(5)  { transition-delay: 0.33s; }
+.reveal-stagger.reveal--visible > *:nth-child(6)  { transition-delay: 0.40s; }
+.reveal-stagger.reveal--visible > *:nth-child(7)  { transition-delay: 0.47s; }
+.reveal-stagger.reveal--visible > *:nth-child(8)  { transition-delay: 0.54s; }
+.reveal-stagger.reveal--visible > *:nth-child(9)  { transition-delay: 0.61s; }
+/* respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal-stagger > * {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+/* =====================================================
+   FLOATING ACTION BUTTONS
+   ===================================================== */
+.fab-group {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 200;
+}
+.fab {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  /*background: #e9efff;*/
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 12px rgba(0,0,0,.15);
+}
+.fab img { width: 26px; height: 26px; }
+@media (max-width: 640px) {
+    .fab-group { bottom: 16px; right: 14px; }
+  .fab { width: 44px; height: 44px; }
+  .fab img { width: 22px; height: 22px; }
+}
+.fab-group{
+  display: none;
+}

@@ -1,0 +1,683 @@
+/* ============================================================
+   Bootstrap 5 overrides + QuickShift brand tokens
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; font-family: "Outfit", Helvetica, sans-serif !important;  }
+
+:root {
+  --bs-primary: #1d22d2;
+  --bs-primary-rgb: 29,34,210;
+  --qs-dark: #16181e;
+  --qs-blue-light: #e9efff;
+  --qs-border: #d5d6d9;
+}
+
+/* Override Bootstrap primary */
+.text-primary   { color: #1d22d2 !important; }
+.bg-primary     { background-color: #1d22d2 !important; }
+.btn-primary    { background-color: #1d22d2 !important; border-color: #1d22d2 !important; }
+.btn-outline-primary { color: #1d22d2 !important; border-color: #1d22d2 !important; }
+
+/* ---- NAV ---- */
+.qs-nav { background: #fff; height: 76px; }
+.qs-nav__link { font-family: "Outfit", Helvetica; font-size: 15px; color: #171a1c !important; }
+.qs-btn-dark {
+  background: #262626; color: #fff;
+  font-family: "Outfit", Helvetica; font-size: 14px;
+}
+.qs-btn-dark:hover { background: #1d22d2; color: #fff; }
+
+.homeEcoomQuick
+{
+  display: inline-block;
+  vertical-align: inherit;
+}
+
+/* ---- HERO ---- */
+.qs-hero { background: #fff; }
+.qs-hero__wave { width: min(3611px, 280%); pointer-events: none; }
+.qs-hero__title { font-family: "Outfit", Helvetica; font-size: clamp(28px,4vw,52px); line-height: 1.15; }
+
+/* badge + tags */
+.qs-badge-live {
+  padding: 3px 10px; background: #fff;
+  border-radius: 6px; border: 1px solid var(--qs-border);
+  box-shadow: 0 1px 2px rgba(10,12,18,.05);
+  display: inline-flex; width: fit-content;
+}
+.qs-dot-yellow {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #ffca05; flex-shrink: 0;
+}
+.qs-dot-yellow-lg {
+  width: 12px; height: 12px; border-radius: 50%;
+  background: #ffca05; flex-shrink: 0;
+}
+.qs-tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 3px 10px; background: #fff;
+  border-radius: 6px; border: 1px solid #d9d9d9;
+  font-family: "Outfit", Helvetica; font-weight: 500;
+  color: #414651; font-size: 12px;
+}
+
+/* form labels */
+.qs-label { font-family: "Outfit", Helvetica; font-weight: 500; color: #414651; font-size: 13px; }
+.form-control, .form-select {
+  border-color: var(--qs-border);
+  font-family: "Outfit", Helvetica; font-size: 13px; color: #717680;
+}
+.form-control:focus, .form-select:focus {
+  border-color: #1d22d2; box-shadow: 0 0 0 .2rem rgba(29,34,210,.15);
+}
+
+/* ---- METRICS STRIP ---- */
+.qs-metrics-strip {
+  background: #1d22d2;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.qs-metric-icon {
+  width: 44px; height: 44px; border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.25);
+  background: rgba(255,255,255,.12);
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* Zigzag row container — clip-path approach */
+.qs-metrics-zigzag {
+  display: flex;
+  align-items: stretch;
+  min-height: 160px;
+}
+
+/* Each metric item — equal flex width */
+.qs-mz-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 44px 20px;
+  position: relative;
+  z-index: 1;
+  overflow: visible;
+}
+
+/* UP items — lighter blue band */
+.qs-mz-up {
+  background: #1d22d2;
+}
+
+/* DOWN items — flattened to match UP items (zigzag offset removed) */
+.qs-mz-down {
+  background: #1d22d2;
+}
+
+/* Dividers are hidden — transitions now handled by skewed pseudo-elements on items */
+.qs-mz-divider { display: none; }
+
+/* Slanted right edge on UP items using ::after */
+.qs-mz-up::after {
+  content: "";
+  position: absolute;
+  top: 0; right: -24px; bottom: 0;
+  width: 48px;
+  background: #1d22d2;
+  clip-path: polygon(0 0, 48% 0, 100% 100%, 0 100%);
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Slanted right edge on DOWN items using ::after */
+.qs-mz-down::after {
+  content: "";
+  position: absolute;
+  top: 0; right: -24px; bottom: 0;
+  width: 48px;
+  background: #1d22d2;
+  clip-path: polygon(0 0, 48% 0, 100% 100%, 0 100%);
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Metric text */
+.qs-mz-value {
+  font-family: "Outfit", Helvetica;
+  font-size: clamp(24px, 3vw, 38px);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+.qs-mz-label {
+  font-family: "Outfit", Helvetica;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255,255,255,.7);
+  line-height: 1.4;
+  max-width: 110px;
+}
+
+/* Mobile: 2-column grid, no zigzag */
+@media (max-width: 767px) {
+  .qs-metrics-zigzag {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    min-height: auto;
+    gap: 0;
+  }
+  /* Hide divider elements */
+  .qs-mz-divider { display: none; }
+  /* Remove pseudo-element wedges */
+  .qs-mz-up::after,
+  .qs-mz-down::after { display: none; }
+  /* All items same style, equal padding */
+  .qs-mz-up,
+  .qs-mz-down {
+    background: #1d22d2;
+    padding: 28px 16px;
+    flex: none;
+  }
+  
+  /* Remove right border on even items (right column) */
+  .qs-mz-item:nth-child(even) {
+    border-right: none;
+  }
+  /* Last row items: remove bottom border */
+  .qs-mz-item:nth-last-child(-n+2) {
+    border-bottom: none;
+  }
+  /* 5th item (last, odd): span full width so it doesn't look orphaned */
+  .qs-mz-item:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    border-right: none;
+  }
+}
+
+/* ---- SECTION BADGES ---- */
+.qs-section-badge {
+  padding: 4px 12px; background: #fff;
+  border-radius: 8px; border: 1px solid var(--qs-border);
+  font-family: "Outfit", Helvetica; font-weight: 500;
+  color: #414651; font-size: 13px;
+  box-shadow: 0 1px 2px rgba(10,12,18,.05);
+}
+.qs-section-badge-dark {
+  padding: 4px 12px; background: #14179a;
+  border-radius: 8px; border: 1px solid #4d51e4;
+  font-family: "Outfit", Helvetica; font-weight: 500;
+  color: #fff; font-size: 13px;
+}
+.qs-section-title {
+  font-family: "Outfit", Helvetica;
+  font-size: clamp(24px,3.2vw,52px);
+  line-height: 1.2; font-weight: 400;
+  padding: 10px 75px 20px 80px;
+}
+.qs-section-blue { background: #1d22d2; }
+
+/* ---- RATE TABLE ---- */
+.qs-tab-pills .nav-link {
+  border-radius: 100px; font-family: "Outfit", Helvetica;
+  font-size: 14px; color: #1b1b1f;
+  border: 1px solid #79747e;
+  padding: 7px 18px;
+  display: inline-flex; align-items: center;
+}
+.qs-tab-pills .nav-link.active {
+  background: #1d22d2; border-color: #1d22d2; color: #fff;
+}
+/* Show icon only on active tab; hide on inactive */
+.qs-tab-pills .nav-link .qs-tab-icon { display: none; }
+.qs-tab-pills .nav-link.active .qs-tab-icon { display: inline-block; }
+
+/* Table wrapper */
+.qs-rate-table-wrap {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e2e4e9;
+  box-shadow: 0 2px 12px rgba(29,34,210,.06);
+}
+.qs-rate-table {
+  min-width: 700px;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+/* Header row */
+.qs-rate-table thead tr th {
+  font-family: "Outfit", Helvetica;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding: 13px 16px;
+  border-bottom: 2px solid #dde1ea;
+  vertical-align: middle;
+}
+/* first column header */
+.qs-rate-table thead tr th:first-child {
+  background: #f3f4f8;
+  color: #414651;
+  min-width: 100px;
+}
+
+/* transit days header */
+.qs-rate-table thead tr th.qs-th-transit {
+  background: #f3f4f8;
+  color: #414651;
+  text-align: center;
+}
+
+/* Body rows */
+.qs-rate-table tbody tr td {
+  font-family: "Outfit", Helvetica;
+  font-size: 14px;
+  color: #2c2f3a;
+  padding: 12px 16px;
+  border-bottom: 1px solid #eef0f4;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+/* Weight slab column */
+.qs-rate-table tbody tr td:first-child {
+  background: #f7f8fc;
+  font-weight: 700;
+  color: #1b1b1f;
+  font-size: 13px;
+}
+/* Transit days column */
+.qs-rate-table tbody tr td.qs-td-transit {
+  text-align: center;
+  background: #f7f8fc;
+  font-size: 12px;
+  color: #717680;
+  font-weight: 500;
+}
+/* Hover */
+.qs-rate-table tbody tr:hover td { background: #eef0fb; }
+.qs-rate-table tbody tr:hover td:first-child,
+.qs-rate-table tbody tr:hover td.qs-td-transit { background: #e4e7f5; }
+/* No bottom border on last row */
+.qs-rate-table tbody tr:last-child td { border-bottom: none; }
+
+/* Best / Fastest cell */
+.qs-best-cell {
+  background: #ecfdf3 !important;
+  color: #079455;
+  font-weight: 700;
+}
+.qs-fastest-cell {
+  background: #eff6ff !important;
+  color: #1d22d2;
+  font-weight: 700;
+}
+.qs-best-badge {
+  display: inline-block;
+  background: #d1fadf;
+  color: #079455;
+  font-size: 10px;
+  font-weight: 600;
+  border-radius: 99px;
+  padding: 2px 7px;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+.qs-fastest-badge {
+  display: inline-block;
+  background: #dbeafe;
+  color: #1d22d2;
+  font-size: 10px;
+  font-weight: 600;
+  border-radius: 99px;
+  padding: 2px 7px;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
+.qs-info-alert {
+  background: var(--qs-blue-light);
+  border: 1px solid var(--qs-border);
+}
+
+/* ---- COURIER CARDS ---- */
+.qs-courier-card { background: var(--qs-blue-light); }
+.qs-badge-orange { background: #fef6ee; color: #b93814; border: none; }
+.qs-badge-green  { background: #cff7d3; color: #009951; border: none; }
+.qs-badge-purple { background: #eaddff; color: #6750a4; border: none; }
+.qs-badge-pink   { background: #ffd8e4; color: #7d5260; border: none; }
+.qs-badge-blue   { background: #dbeafe; color: #007aff; border: none; }
+
+/* ---- TRANSIT ---- */
+.qs-transit-card { background: var(--qs-blue-light); }
+.qs-icon-dark {
+  width: 44px; height: 44px; background: #1d22d2;
+  border-radius: 10px; display: flex;
+  align-items: center; justify-content: center; flex-shrink: 0;
+}
+
+/* ---- FORMULA CARDS ---- */
+.qs-formula-card { 
+  /* background: #1d22d2;  */
+  background-image:url('../group-1991422180-1.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 380px;
+  min-width: 399px;
+}
+
+.cardVol
+{
+  margin-top: 5rem; 
+}
+
+.qs-formula-box { background: var(--qs-blue-light); width: 444px; } 
+.cardVolp {width: 444px; }
+
+/* ---- FEATURE ITEMS ---- */
+.qs-feat-icon {
+  width: 40px; height: 40px; border-radius: 8px;
+  background: #fff;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* ---- ACCURATE BILLING & SHIPMENT PROTECTION ---- */
+.qs-billing-protection-card {
+  border: 1px solid #e2e4e9;
+  box-shadow: 0 4px 20px rgba(29,34,210,.07);
+  background: #fff;
+  width: 100%;
+}
+.qs-billing-left {
+  background: #f7f8ff;
+  width: 100%;
+}
+.qs-protection-right {
+  background: #fff;
+  width: 100%;
+}
+.qs-billing-hdivider {
+  height: 1px;
+  width: 100%;
+  background: #e2e4e9;
+  flex-shrink: 0;
+}
+.qs-billing-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #e9efff;
+  border: 1px solid #c7caf5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.qs-protection-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #ecfdf3;
+  border: 1px solid #bbf7d0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.qs-billing-label {
+  font-family: "Outfit", Helvetica;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  color: #1d22d2;
+  text-transform: uppercase;
+}
+.qs-billing-title {
+  font-family: "Outfit", Helvetica;
+  font-size: 18px;
+  font-weight: 700;
+  color: #181d27;
+  line-height: 1.3;
+}
+.qs-billing-desc {
+  font-family: "Outfit", Helvetica;
+  font-size: 13px;
+  color: #535862;
+  line-height: 1.75;
+}
+.qs-billing-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  background: #fff;
+  border: 1px solid #e2e4e9;
+  border-radius: 99px;
+  font-family: "Outfit", Helvetica;
+  font-size: 12px;
+  font-weight: 500;
+  color: #414651;
+  white-space: nowrap;
+}
+
+/* ---- WHY CARDS ---- */
+.qs-why-card { background: var(--qs-blue-light); }
+.qs-icon-primary {
+  width: 40px; height: 40px; border-radius: 10px;
+  background: #1d22d2; display: flex;
+  align-items: center; justify-content: center; flex-shrink: 0;
+}
+
+/* ---- WHY QUICKSHIFT — DESKTOP GRID ---- */
+/* Desktop (≥1025px): static 3-col grid, hide slider chrome */
+@media (min-width: 1025px) {
+  .qs-why-slider-outer { display: none !important; }
+  .qs-why-dots         { display: none !important; }
+  .qs-why-desktop-grid { display: flex !important; flex-wrap: wrap; gap: 24px; }
+  .qs-why-desktop-grid .qs-why-card-wrap {
+    flex: 0 0 calc(33.333% - 16px);
+    max-width: calc(33.333% - 16px);
+    display: flex;
+  }
+}
+
+/* Mobile / Tablet (<1025px): hide desktop grid, show slider */
+@media (max-width: 1024px) {
+  .qs-why-desktop-grid { display: none !important; }
+}
+
+/* ---- WHY QUICKSHIFT SLIDER (mobile/tablet only) ---- */
+.qs-why-slider-outer {
+  position: relative;
+  padding: 0;
+  width: 100%;
+  display: block;
+  overflow: visible;
+}
+.qs-why-track-wrap {
+  overflow: hidden;
+  border-radius: 12px;
+  width: 100%;
+}
+.qs-why-track {
+  display: flex;
+  flex-wrap: nowrap;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+  width: max-content;
+}
+
+/* Slide sizing is handled by JS; only set min-width:0 to prevent overflow */
+.qs-why-slide {
+  min-width: 0;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+/* Dots */
+.qs-why-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+}
+.qs-why-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: #d5d6d9;
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.3s, width 0.3s;
+}
+.qs-why-dot.active {
+  background: #1d22d2;
+  width: 28px;
+  border-radius: 99px;
+}
+.qs-why-dot:hover { background: #a0a5e8; }
+
+/* ---- FAQ SECTION ---- */
+/* ---------- FAQ ---------- */
+.qs-faq {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.qs-faq-item {
+  border-top: 1px solid #e9e9eb;
+  padding: 20px 0;
+}
+.qs-faq-item:first-child { border-top: none; }
+.qs-faq-item summary {
+  font-size: clamp(14px, 1.4vw, 16px);
+  font-weight: 600;
+  color: #181d27;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+.qs-faq-item summary::after {
+  content: "−";
+  font-size: 20px;
+  color: #535861;
+  flex-shrink: 0;
+}
+.qs-faq-item:not([open]) summary::after { content: "+"; }
+.qs-faq-item p {
+  font-size: clamp(13px, 1.2vw, 15px);
+  color: #535861;
+  line-height: 1.7;
+  margin: 12px 0 0;
+}
+
+/* ---- CTA ---- */
+.qs-section-blue { background: #1d22d2; }
+
+/* ---- FOOTER ---- */
+.qs-footer { background: #1b243a; }
+.qs-footer-links { display: flex; flex-direction: column; gap: 8px; }
+.qs-footer-links li a { color: rgba(255,255,255,.6); font-size: 13px; text-decoration: none; font-family: "Outfit", Helvetica; }
+.qs-footer-links li a:hover { color: #fff; }
+.qs-footer-links-inline { color: rgba(255,255,255,.7); font-size: 13px; text-decoration: none; font-family: "Outfit", Helvetica; }
+.qs-footer-links-inline:hover { color: #fff; }
+
+/* ---- RESPONSIVE HELPERS ---- */
+@media (max-width: 576px) {
+  .qs-hero__title { font-size: 26px; }
+  .qs-section-title { font-size: 22px; }
+  .qs-section-title {padding: 10px 50px 20px 40px;}
+  .homeEcoomQuick{ width: 20px;}
+}
+
+
+
+/* Two info cards side by side */
+.shipping-info-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+@media (max-width: 768px) {
+  .shipping-info-cards { grid-template-columns: 1fr; }
+}
+
+.shipping-info-card {
+  border-radius: 20px;
+  overflow: hidden;
+  min-height: 340px;
+}
+.shipping-info-card__inner {
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 40px 70px 0px 20px;
+  text-align: center;
+}
+.shipping-info-card__content {
+    position: relative;
+    left: 0px;
+    bottom: 0px;
+}
+.shipping-info-card__title {
+  font-family: "Outfit", Helvetica;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 28px;
+  line-height: 1.2;
+}
+.shipping-info-card__formula {
+  background: #e9efff;
+  border-radius: 12px;
+  padding: 18px 24px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 10px;
+}
+.shipping-info-card__formula p {
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #535862;
+  font-size: 13px;
+  line-height: 1.7;
+  text-align: left;
+}
+.shipping-info-card__note {
+  font-family: "Outfit", Helvetica;
+  font-weight: 400;
+  color: #e9efff;
+  font-size: 14px;
+  line-height: 1.55;
+  margin-top: 10px;
+}
+
+@media (max-width: 640px) {
+  .shipping-info-card__title { font-size: 20px; }
+  .shipping-info-card__formula { padding: 14px 16px; }
+  .shipping-info-card__inner {
+        padding: 60px 20px 0 20px;
+        gap: 16px;
+        min-height: 320px;
+        width: 100%;
+        height: 100%;
+    }
+  .shipping-feature-card--wide { grid-column: 1; }
+}

@@ -1,0 +1,34 @@
+{
+  "name": "quickship-payload",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "generate:importmap": "payload generate:importmap",
+    "seed": "tsx --env-file=.env src/seed/run-seed.ts",
+    "migrate:create": "payload migrate:create",
+    "migrate": "payload migrate",
+    "migrate:status": "payload migrate:status"
+  },
+  "dependencies": {
+    "@payloadcms/db-postgres": "3.37.0",
+    "@payloadcms/next": "3.37.0",
+    "@payloadcms/richtext-lexical": "3.37.0",
+    "next": "15.2.3",
+    "payload": "3.37.0",
+    "react": "19.0.0",
+    "react-dom": "19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.10.2",
+    "@types/react": "19.0.2",
+    "@types/react-dom": "19.0.2",
+    "tsx": "4.19.2",
+    "typescript": "5.7.2"
+  },
+  "engines": {
+    "node": "^18.20.2 || >=20.9.0"
+  }
+}

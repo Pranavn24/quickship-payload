@@ -1,0 +1,553 @@
+@import url('https://fonts.googleapis.com/css?family=Outfit:400,500,600,700,800');
+
+/* =========================================================
+   QUICKSHIFT PREMIUM ADMIN
+   White + Dark Blue + Black + Dark Grey
+   BLUE REMOVED FROM BUTTONS
+   ========================================================= */
+
+:root,
+html[data-theme='light'],
+html[data-theme='dark'] {
+  --theme-elevation-0: #ffffff;
+  --theme-elevation-50: #fafbfc;
+  --theme-elevation-100: #f5f6f8;
+  --theme-elevation-150: #eef0f4;
+  --theme-elevation-200: #e2e5ea;
+  --theme-elevation-250: #d5d9df;
+  --theme-elevation-800: #292d36;
+  --theme-elevation-900: #1d2027;
+  --theme-elevation-1000: #17191f;
+
+  --theme-bg: #ffffff;
+  --theme-text: #17191f;
+  --theme-input-bg: #ffffff;
+  --theme-border-color: #e1e4e9;
+
+  --quickshift-blue: #1d22d2;
+  --quickshift-blue-dark: #1519a8;
+  --quickshift-blue-light: #eef0ff;
+
+  --quickshift-black: #17191f;
+  --quickshift-dark: #30343c;
+  --quickshift-grey: #68707c;
+  --quickshift-light-grey: #f5f6f8;
+  --quickshift-border: #e1e4e9;
+}
+
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+* {
+  font-family: 'Outfit', Helvetica, Arial, sans-serif !important;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background: #ffffff !important;
+  color: #17191f !important;
+}
+
+html[data-theme='dark'],
+html[data-theme='dark'] body {
+  background: #ffffff !important;
+  color: #17191f !important;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.app-header {
+  background: #ffffff !important;
+  border-bottom: 1px solid #eef0f3 !important;
+  box-shadow: 0 1px 8px rgba(20, 24, 40, 0.04);
+}
+
+.nav-toggler {
+  background: #ffffff !important;
+  color: #17191f !important;
+  border: 0 !important;
+}
+
+.step-nav {
+  background: #ffffff !important;
+  border-bottom: 1px solid #eef0f3 !important;
+}
+
+.step-nav a,
+.step-nav__last {
+  color: #17191f !important;
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.nav,
+.template-default__nav {
+  background: #ffffff !important;
+  border-right: 1px solid #eef0f3 !important;
+}
+
+.nav-group__label {
+  color: #747a85 !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase;
+  font-size: 10px !important;
+}
+
+.nav__link {
+  color: #17191f !important;
+  border-radius: 10px !important;
+  margin: 3px 10px !important;
+  padding: 10px 12px !important;
+  transition: all 0.18s ease !important;
+}
+
+.nav__link:hover {
+  background: #f5f6f8 !important;
+  color: #1d22d2 !important;
+}
+
+.nav__link.active,
+.nav__link--active {
+  background: #f0f1f4 !important;
+  color: #17191f !important;
+  font-weight: 700 !important;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+.template-default__main {
+  background: #ffffff !important;
+}
+
+.collection-list,
+.collection-edit,
+.dashboard {
+  background: #ffffff !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #17191f !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.025em;
+}
+
+h1 {
+  font-size: 34px !important;
+}
+
+h2 {
+  font-size: 25px !important;
+}
+
+
+/* =========================================================
+   BUTTONS
+   NO BLUE
+   ========================================================= */
+
+.btn {
+  border-radius: 10px !important;
+  font-weight: 600 !important;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease,
+    border-color 0.18s ease !important;
+}
+
+
+/* PRIMARY BUTTON */
+
+.btn--style-primary {
+  background: #17191f !important;
+  border: 1px solid #17191f !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(23, 25, 31, 0.12);
+}
+
+.btn--style-primary:hover {
+  background: #30343c !important;
+  border-color: #30343c !important;
+  color: #ffffff !important;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(23, 25, 31, 0.16);
+}
+
+
+/* SECONDARY BUTTON */
+
+.btn--style-secondary {
+  background: #ffffff !important;
+  border: 1px solid #d9dde4 !important;
+  color: #17191f !important;
+  box-shadow: none !important;
+}
+
+.btn--style-secondary:hover {
+  background: #f5f6f8 !important;
+  border-color: #bfc3ca !important;
+  color: #17191f !important;
+}
+
+
+/* ALL BUTTONS */
+
+button {
+  border-radius: 10px !important;
+  font-weight: 600 !important;
+  color: #17191f !important;
+}
+
+button:hover {
+  color: #17191f !important;
+}
+
+
+/* SUBMIT BUTTONS */
+
+button[type='submit'] {
+  background: #17191f !important;
+  border: 1px solid #17191f !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(23, 25, 31, 0.12);
+}
+
+button[type='submit']:hover {
+  background: #30343c !important;
+  border-color: #30343c !important;
+  color: #ffffff !important;
+}
+
+
+/* CREATE BUTTON */
+
+button[class*='create'],
+button[class*='Create'] {
+  background: #17191f !important;
+  border-color: #17191f !important;
+  color: #ffffff !important;
+}
+
+button[class*='create']:hover,
+button[class*='Create']:hover {
+  background: #30343c !important;
+  border-color: #30343c !important;
+  color: #ffffff !important;
+}
+
+
+/* PRIMARY CLASS VARIATIONS */
+
+button[class*='primary'],
+button[class*='Primary'] {
+  background: #17191f !important;
+  border-color: #17191f !important;
+  color: #ffffff !important;
+}
+
+button[class*='primary']:hover,
+button[class*='Primary']:hover {
+  background: #30343c !important;
+  border-color: #30343c !important;
+  color: #ffffff !important;
+}
+
+
+/* BUTTON ICONS */
+
+button svg {
+  color: currentColor !important;
+}
+
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+.card,
+.collection-list__group .card,
+.dashboard__card,
+.group,
+.card--has-onclick {
+  background: #ffffff !important;
+  border: 1px solid #e8eaee !important;
+  border-radius: 16px !important;
+  box-shadow:
+    0 1px 2px rgba(20, 24, 40, 0.03),
+    0 8px 25px rgba(20, 24, 40, 0.035);
+}
+
+.card:hover {
+  border-color: #d5d8de !important;
+}
+
+
+/* =========================================================
+   INPUTS
+   ========================================================= */
+
+input:not([type='checkbox']):not([type='radio']),
+textarea,
+select,
+.rs__control {
+  background: #ffffff !important;
+  border: 1px solid #dfe2e8 !important;
+  border-radius: 10px !important;
+  color: #17191f !important;
+  min-height: 42px;
+
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+input:not([type='checkbox']):not([type='radio']):hover,
+textarea:hover,
+select:hover,
+.rs__control:hover {
+  border-color: #c9cdd5 !important;
+}
+
+input:not([type='checkbox']):not([type='radio']):focus,
+textarea:focus,
+select:focus,
+.rs__control--is-focused {
+  border-color: #1d22d2 !important;
+  box-shadow: 0 0 0 3px rgba(29, 34, 210, 0.10) !important;
+  outline: none !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #9aa0aa !important;
+}
+
+
+/* =========================================================
+   LABELS
+   ========================================================= */
+
+label {
+  color: #17191f !important;
+  font-weight: 600 !important;
+}
+
+.field-description {
+  color: #737985 !important;
+  line-height: 1.5 !important;
+}
+
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+.table {
+  background: #ffffff !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 16px !important;
+  overflow: hidden;
+
+  box-shadow:
+    0 2px 5px rgba(20, 24, 40, 0.03),
+    0 10px 30px rgba(20, 24, 40, 0.025);
+}
+
+.table thead th {
+  background: #fafbfc !important;
+  color: #6b717c !important;
+  border-bottom: 1px solid #e8eaee !important;
+
+  font-weight: 700 !important;
+  font-size: 11px !important;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.table tbody tr {
+  background: #ffffff !important;
+  border-bottom: 1px solid #f0f1f3 !important;
+
+  transition: background 0.15s ease;
+}
+
+.table tbody tr:hover {
+  background: #fafafa !important;
+}
+
+.table td {
+  color: #17191f !important;
+}
+
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+.cell-link,
+.table a {
+  color: #1d22d2 !important;
+  font-weight: 600 !important;
+}
+
+.cell-link:hover,
+.table a:hover {
+  color: #1519a8 !important;
+}
+
+
+/* =========================================================
+   SEARCH / FILTER BAR
+   ========================================================= */
+
+.list-header,
+.doc-controls {
+  background: #ffffff !important;
+}
+
+.list-header {
+  border-radius: 14px !important;
+}
+
+.search-filter__input,
+.list-header input {
+  background: #ffffff !important;
+}
+
+
+/* =========================================================
+   PILLS / STATUS
+   ========================================================= */
+
+.pill,
+.pill--style-light {
+  background: #f5f6f8 !important;
+  color: #17191f !important;
+  border: 1px solid #e0e3e8 !important;
+  border-radius: 999px !important;
+  font-weight: 600 !important;
+}
+
+
+/* =========================================================
+   DOCUMENT HEADER
+   ========================================================= */
+
+.doc-header {
+  background: #ffffff !important;
+}
+
+.doc-header h1,
+.doc-header__title {
+  color: #17191f !important;
+}
+
+
+/* =========================================================
+   CHECKBOX
+   ========================================================= */
+
+input[type='checkbox'] {
+  accent-color: #17191f !important;
+}
+
+
+/* =========================================================
+   MODALS
+   ========================================================= */
+
+.modal {
+  background: #ffffff !important;
+}
+
+.modal__content {
+  background: #ffffff !important;
+  border-radius: 18px !important;
+
+  box-shadow:
+    0 20px 60px rgba(20, 24, 40, 0.15);
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.app-footer {
+  background: #ffffff !important;
+  border-top: 1px solid #eef0f3 !important;
+}
+
+
+/* =========================================================
+   REMOVE HARSH DARK BACKGROUNDS
+   ========================================================= */
+
+[class*='background--dark'],
+[class*='bg--dark'] {
+  background: #ffffff !important;
+  color: #17191f !important;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d8dbe2;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #bfc3cc;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  h1 {
+    font-size: 28px !important;
+  }
+
+  .table {
+    font-size: 13px;
+  }
+
+  input,
+  textarea,
+  select {
+    min-height: 42px;
+  }
+}

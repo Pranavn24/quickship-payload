@@ -1,0 +1,1029 @@
+       <section class="qs-metrics-strip">
+        <div class="container-xl">
+          <div class="qs-metrics-zigzag">
+
+            <!-- Item 1 — UP -->
+            <div class="qs-mz-item qs-mz-up text-center">
+              <div class="qs-metric-icon mx-auto mb-2">
+                <img src="https://c.animaapp.com/mo2ebxhfWPtEoB/img/currency-rupee-circle.svg" width="24" alt="" />
+              </div>
+              <div class="qs-mz-value">&#8377;40</div>
+              <div class="qs-mz-label">Starting Price / 500g</div>
+            </div>
+
+            <!-- Divider 1 -->
+            <div class="qs-mz-divider qs-mz-div-down" aria-hidden="true"></div>
+
+            <!-- Item 2 — DOWN -->
+            <div class="qs-mz-item qs-mz-down text-center">
+              <div class="qs-metric-icon mx-auto mb-2">
+                <img src="https://c.animaapp.com/mo2ebxhfWPtEoB/img/route.svg" width="24" alt="" />
+              </div>
+              <div class="qs-mz-value">1,400</div>
+              <div class="qs-mz-label">km Route Distance</div>
+            </div>
+
+            <!-- Divider 2 -->
+            <div class="qs-mz-divider qs-mz-div-up" aria-hidden="true"></div>
+
+            <!-- Item 3 — UP -->
+            <div class="qs-mz-item qs-mz-up text-center">
+              <div class="qs-metric-icon mx-auto mb-2">
+                <img src="https://c.animaapp.com/mo2ebxhfWPtEoB/img/calendar-plus-02.svg" width="24" alt="" />
+              </div>
+              <div class="qs-mz-value">2&#8211;3</div>
+              <div class="qs-mz-label">Days Transit (Surface)</div>
+            </div>
+
+            <!-- Divider 3 -->
+            <div class="qs-mz-divider qs-mz-div-down" aria-hidden="true"></div>
+
+            <!-- Item 4 — DOWN -->
+            <div class="qs-mz-item qs-mz-down text-center">
+              <div class="qs-metric-icon mx-auto mb-2">
+                <img src="https://c.animaapp.com/mo2ebxhfWPtEoB/img/users-03.svg" width="24" alt="" />
+              </div>
+              <div class="qs-mz-value">25+</div>
+              <div class="qs-mz-label">Courier Partners</div>
+            </div>
+
+            <!-- Divider 4 -->
+            <div class="qs-mz-divider qs-mz-div-up" aria-hidden="true"></div>
+
+            <!-- Item 5 — UP -->
+            <div class="qs-mz-item qs-mz-up text-center">
+              <div class="qs-metric-icon mx-auto mb-2">
+                <img src="https://c.animaapp.com/mo2ebxhfWPtEoB/img/globe-05.svg" width="24" alt="" />
+              </div>
+              <div class="qs-mz-value">28k+</div>
+              <div class="qs-mz-label">Pincodes Served</div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="py-5 bg-light" id="rate-table">
+        <div class="container-xl">
+          <div class="text-center mb-5">
+            <span class="qs-section-badge mb-3 d-inline-flex align-items-center gap-2"
+              ><span class="qs-dot-yellow"></span>Rate Table</span
+            >
+            <h2 class="qs-section-title mb-3">
+              <span class="text-dark">Delhi to Mumbai </span
+              ><span class="text-primary fw-semibold">Shipping Cost by Weight and Shipment Mode <span> <img src="/assets/homeEccom.png"  alt="homeeccom" class="homeEcoomQuick"></span></span>
+            </h2>
+            <p class="text-secondary mx-auto lh-base" style="max-width:800px">
+              The cost comparative table is based on the shipment weight and surface/air express mode. The courier charges start at ₹45 and are all inclusive of the fuel charges. All rates mentioned are based on actual or volumetric weight (whichever is higher).
+            </p>
+          </div>
+
+          <div class="d-flex flex-wrap align-items-center gap-3 mb-4">
+            <ul class="nav nav-pills qs-tab-pills" id="rateTabs" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link active"
+                  id="surface-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#surface"
+                  type="button"
+                  role="tab"
+                >
+                  <img src="/assets/selected-icon.svg" width="16" alt="" class="qs-tab-icon me-1" />Surface
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="air-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#air"
+                  type="button"
+                  role="tab"
+                >
+                  <img src="/assets/selected-icon.svg" width="16" alt="" class="qs-tab-icon me-1" />Air Express
+                </button>
+              </li>
+            </ul>
+            <span class="text-secondary small"
+              >Showing prepaid rates &middot; GST extra &middot; COD: +&#8377;35 or 1.5%</span
+            >
+          </div>
+          <p id="dmRateApiError" class="text-danger small mb-3" style="display:none;"></p>
+
+          <div class="tab-content">
+            <!-- SURFACE TAB -->
+            <div class="tab-pane fade show active" id="surface" role="tabpanel">
+              <div class="table-responsive qs-rate-table-wrap" style=" overflow-x: auto;">
+                <table class="table mb-0 qs-rate-table">
+                  <thead id="dmSurfaceHead">
+                    <tr>
+                      <th>Weight Slab</th>
+                      <th class="qs-th-courier">Delhivery</th>
+                      <th class="qs-th-courier">XpressBees</th>
+                      <th class="qs-th-courier">Ekart</th>
+                      <th class="qs-th-courier">DTDC</th>
+                      <th class="qs-th-courier">BlueDart</th>
+                      <th class="qs-th-courier">Shadowfax</th>
+                      <th class="qs-th-transit">Transit Days</th>
+                    </tr>
+                  </thead>
+                  <tbody id="dmSurfaceBody">
+                    <tr>
+                      <td>500 g</td>
+                      <td>&#8377;58</td>
+                      <td>&#8377;55</td>
+                      <td>&#8377;50</td>
+                      <td>&#8377;65</td>
+                      <td>&#8377;120</td>
+                      <td class="qs-best-cell">&#8377;45 <span class="qs-best-badge">Best</span></td>
+                      <td class="qs-td-transit">2&#8211;3 days</td>
+                    </tr>
+                    <tr>
+                      <td>1 kg</td>
+                      <td>&#8377;80</td>
+                      <td>&#8377;75</td>
+                      <td>&#8377;68</td>
+                      <td>&#8377;90</td>
+                      <td>&#8377;170</td>
+                      <td class="qs-best-cell">&#8377;63 <span class="qs-best-badge">Best</span></td>
+                      <td class="qs-td-transit">2&#8211;3 days</td>
+                    </tr>
+                    <tr>
+                      <td>1.5 kg</td>
+                      <td>&#8377;99</td>
+                      <td>&#8377;95</td>
+                      <td>&#8377;86</td>
+                      <td>&#8377;112</td>
+                      <td>&#8377;215</td>
+                      <td class="qs-best-cell">&#8377;81 <span class="qs-best-badge">Best</span></td>
+                      <td class="qs-td-transit">2&#8211;3 days</td>
+                    </tr>
+                    <tr>
+                      <td>2 kg</td>
+                      <td>&#8377;118</td>
+                      <td>&#8377;115</td>
+                      <td>&#8377;104</td>
+                      <td>&#8377;134</td>
+                      <td>&#8377;260</td>
+                      <td class="qs-best-cell">&#8377;99 <span class="qs-best-badge">Best</span></td>
+                      <td class="qs-td-transit">2&#8211;4 days</td>
+                    </tr>
+                    <tr>
+                      <td>3 kg</td>
+                      <td>&#8377;156</td>
+                      <td>&#8377;150</td>
+                      <td>&#8377;138</td>
+                      <td>&#8377;178</td>
+                      <td>&#8377;350</td>
+                      <td class="qs-best-cell">&#8377;134 <span class="qs-best-badge">Best</span></td>
+                      <td class="qs-td-transit">2&#8211;4 days</td>
+                    </tr>
+                    <tr>
+                      <td>5 kg</td>
+                      <td>&#8377;228</td>
+                      <td>&#8377;218</td>
+                      <td>&#8377;206</td>
+                      <td>&#8377;258</td>
+                      <td>&#8377;520</td>
+                      <td class="qs-best-cell">&#8377;196 <span class="qs-best-badge">Best</span></td>
+                      <td class="qs-td-transit">3&#8211;4 days</td>
+                    </tr>
+                    <tr>
+                      <td>7 kg</td>
+                      <td>&#8377;294</td>
+                      <td>&#8377;284</td>
+                      <td>&#8377;270</td>
+                      <td>&#8377;334</td>
+                      <td>&#8377;680</td>
+                      <td class="qs-best-cell">&#8377;256 <span class="qs-best-badge">Best</span></td>
+                      <td class="qs-td-transit">3&#8211;4 days</td>
+                    </tr>
+                    <tr>
+                      <td>10 kg</td>
+                      <td>&#8377;390</td>
+                      <td>&#8377;374</td>
+                      <td>&#8377;360</td>
+                      <td>&#8377;440</td>
+                      <td>&#8377;910</td>
+                      <td class="qs-best-cell">&#8377;340 <span class="qs-best-badge">Best</span></td>
+                      <td class="qs-td-transit">3&#8211;4 days</td>
+                    </tr>
+                    <tr>
+                      <td>15 kg</td>
+                      <td>&#8377;570</td>
+                      <td>&#8377;546</td>
+                      <td>&#8377;522</td>
+                      <td>&#8377;646</td>
+                      <td>&#8377;1340</td>
+                      <td class="qs-best-cell">&#8377;496 <span class="qs-best-badge">Best</span></td>
+                      <td class="qs-td-transit">4&#8211;5 days</td>
+                    </tr>
+                    <tr>
+                      <td>20 kg</td>
+                      <td>&#8377;740</td>
+                      <td>&#8377;710</td>
+                      <td>&#8377;680</td>
+                      <td>&#8377;840</td>
+                      <td>&#8377;1750</td>
+                      <td class="qs-best-cell">&#8377;644 <span class="qs-best-badge">Best</span></td>
+                      <td class="qs-td-transit">4&#8211;5 days</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- AIR EXPRESS TAB -->
+            <div class="tab-pane fade" id="air" role="tabpanel">
+              <div class="table-responsive qs-rate-table-wrap">
+                <table class="table mb-0 qs-rate-table">
+                  <thead id="dmAirHead">
+                    <tr>
+                      <th>Weight Slab</th>
+                      <th class="qs-th-courier">Delhivery Air</th>
+                      <th class="qs-th-courier">XpressBees Air</th>
+                      <th class="qs-th-courier">Ekart Air</th>
+                      <th class="qs-th-courier">BlueDart</th>
+                      <th class="qs-th-courier">Ecom Express Air</th>
+                      <th class="qs-th-transit">Transit Days</th>
+                    </tr>
+                  </thead>
+                  <tbody id="dmAirBody">
+                    <tr>
+                      <td>500 g</td>
+                      <td>&#8377;90</td>
+                      <td>&#8377;85</td>
+                      <td>&#8377;80</td>
+                      <td class="qs-fastest-cell">&#8377;120 <span class="qs-fastest-badge">Fastest</span></td>
+                      <td>&#8377;88</td>
+                      <td class="qs-td-transit">1&#8211;2 days</td>
+                    </tr>
+                    <tr>
+                      <td>1 kg</td>
+                      <td>&#8377;140</td>
+                      <td>&#8377;130</td>
+                      <td>&#8377;125</td>
+                      <td class="qs-fastest-cell">&#8377;170 <span class="qs-fastest-badge">Fastest</span></td>
+                      <td>&#8377;135</td>
+                      <td class="qs-td-transit">1&#8211;2 days</td>
+                    </tr>
+                    <tr>
+                      <td>2 kg</td>
+                      <td>&#8377;200</td>
+                      <td>&#8377;190</td>
+                      <td>&#8377;185</td>
+                      <td class="qs-fastest-cell">&#8377;260 <span class="qs-fastest-badge">Fastest</span></td>
+                      <td>&#8377;195</td>
+                      <td class="qs-td-transit">1&#8211;2 days</td>
+                    </tr>
+                    <tr>
+                      <td>5 kg</td>
+                      <td>&#8377;420</td>
+                      <td>&#8377;400</td>
+                      <td>&#8377;390</td>
+                      <td class="qs-fastest-cell">&#8377;520 <span class="qs-fastest-badge">Fastest</span></td>
+                      <td>&#8377;410</td>
+                      <td class="qs-td-transit">1&#8211;2 days</td>
+                    </tr>
+                    <tr>
+                      <td>10 kg</td>
+                      <td>&#8377;780</td>
+                      <td>&#8377;745</td>
+                      <td>&#8377;720</td>
+                      <td class="qs-fastest-cell">&#8377;910 <span class="qs-fastest-badge">Fastest</span></td>
+                      <td>&#8377;760</td>
+                      <td class="qs-td-transit">1&#8211;2 days</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="alert qs-info-alert d-flex align-items-start gap-3 mt-4 rounded-4">
+            <img
+              src="/assets/info-circle.svg"
+              width="24"
+              alt=""
+              class="flex-shrink-0 mt-1"
+            />
+            <div>
+              <p class="fw-semibold mb-1">How QuickShift saves more?</p>
+              <p class="mb-0 text-secondary small">
+                QuickShift levies a pre-calculated bulk rate on your packages, reducing the overall shipment cost by 20
+                to 35%. Minimum volume conditions do not apply here.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-5 bg-white">
+        <div class="container-xl">
+          <div class="text-center mb-5">
+            <span class="qs-section-badge mb-3 d-inline-flex align-items-center gap-2"
+              ><span class="qs-dot-yellow"></span>Courier Comparison</span
+            >
+            <h2 class="qs-section-title mb-3">
+              <span class="text-primary fw-semibold">How to Find Out the Best Courier Partner for </span
+              ><span class="text-dark">Your Ecommerce Order Fulfillment? <img src="/assets/homeEccom.png"  alt="homeeccom" class="homeEcoomQuick"></span></span>
+            </h2>
+            <p class="text-secondary mx-auto lh-base" style="max-width:860px">
+              Apart from the varying shipping rates from Delhi to Mumbai, every courier partner brings its strengths to the table. Below is an overview of all QuickShift partners to help you determine which shipping service is the best, as per speed, cost, reliability, and COD handling capability.
+            </p>
+          </div>
+          <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4" id="dmCourierCardsGrid">
+            <div class="col">
+              <div class="card h-100 border qs-courier-card rounded-4">
+                <div class="card-body p-4">
+                  <div class="d-flex justify-content-between align-items-center border-bottom pb-3 mb-3">
+                    <span class="fw-bold fs-6">DELHIVERY</span>
+                    <span class="badge rounded-pill qs-badge-orange">Best Value</span>
+                  </div>
+                  <ul class="list-unstyled mb-0 qs-courier-list">
+                    <li class="d-flex justify-content-between py-2 border-bottom">
+                      <span class="text-muted">Starting Rate</span><span class="fw-semibold">&#8377;58 / 500g</span>
+                    </li>
+                    <li class="d-flex justify-content-between py-2 border-bottom">
+                      <span class="text-muted">Per Extra 500g</span><span class="fw-semibold">+&#8377;22</span>
+                    </li>
+                    <li class="d-flex justify-content-between py-2 border-bottom">
+                      <span class="text-muted">Transit Time</span><span class="fw-semibold">2&#8211;3 Days</span>
+                    </li>
+                    <li class="d-flex justify-content-between py-2 border-bottom">
+                      <span class="text-muted">Delivery Speed</span><span class="fw-semibold">Same Day</span>
+                    </li>
+                    <li class="d-flex justify-content-between py-2 border-bottom">
+                      <span class="text-muted">COD Charges</span><span class="fw-semibold">&#8377;35 or 1.5%</span>
+                    </li>
+                    <li class="d-flex justify-content-between py-2 border-bottom">
+                      <span class="text-muted">Pincode Coverage</span><span class="fw-semibold">18,000+</span>
+                    </li>
+                    <li class="d-flex justify-content-between py-2">
+                      <span class="text-muted">Best for</span
+                      ><span class="fw-semibold text-primary">B2C eCommerce</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 border qs-courier-card rounded-4">
+                <div class="card-body p-4">
+                  <div class="d-flex justify-content-between align-items-center border-bottom pb-3 mb-3">
+                    <span class="fw-bold fs-6">XPRESSBEES</span>
+                    <span class="badge rounded-pill qs-badge-green">Reliable</span>
+                  </div>
+                  <ul class="list-unstyled mb-0 qs-courier-list">
+                    <li class="d-flex justify-content-between py-2 border-bottom">
+                      <span class="text-muted">Starting Rate</span><span class="fw-semibold">&#8377;55 / 500g</span>
+                    </li>
+                    <li class="d-flex justify-content-between py-2 border-bottom">
+                      <span class="text-muted">Per Extra 500g</span><span class="fw-semibold">+&#8377;20</span>
+                    </li>
+                    <li class="d-flex justify-content-between py-2 border-bottom">
+                      <span class="text-muted">Transit Time</span><span class="fw-semibold">2&#8211;3 Days</span>
+                    </li>
+                    <li class="d-flex justify-content-between py-2 border-bottom">
+                      <span class="text-muted">Delivery Speed</span><span class="fw-semibold">Same Day</span>
+                    </li>
+                    <li class="d-flex justify-content-between py-2 border-bottom">
+                      <span class="text-muted">COD Charges</span><span class="fw-semibold">&#8377;30 or 1.25%</span>
+                    </li>
+                    <li class="d-flex justify-content-between py-2 border-bottom">
+                      <span class="text-muted">Pincode Coverage</span><span class="fw-semibold">17,000+</span>
+                    </li>
+                    <li class="d-flex justify-content-between py-2">
+                      <span class="text-muted">Best for</span
+                      ><span class="fw-semibold text-primary">Fashion &amp; Apparel</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 border qs-courier-card rounded-4">
+                <div class="card-body p-4">
+                  <div class="d-flex justify-content-between align-items-center border-bottom pb-3 mb-3">
+                    <span class="fw-bold fs-6">BLUEDART</span>
+                    <span class="badge rounded-pill qs-badge-purple">Fastest</span>
+                  </div>
+                  <ul class="list-unstyled mb-0 qs-courier-list">
+                    <li class="d-flex justify-content-between py-2 border-bottom">
+                      <span class="text-muted">Starting Rate</span><span class="fw-semibold">&#8377;120 / 500g</span>
+                    </li>
+                    <li class="d-flex justify-content-between py-2 border-bottom">
+                      <span class="text-muted">Per Extra 500g</span><span class="fw-semibold">+&#8377;55</span>
+                    </li>
+                    <li class="d-flex justify-content-between py-2 border-bottom">
+                      <span class="text-muted">Transit Time</span><span class="fw-semibold">1&#8211;2 Days</span>
+                    </li>
+                    <li class="d-flex justify-content-between py-2 border-bottom">
+                      <span class="text-muted">Delivery Speed</span><span class="fw-semibold">4 hrs</span>
+                    </li>
+                    <li class="d-flex justify-content-between py-2 border-bottom">
+                      <span class="text-muted">COD Charges</span><span class="fw-semibold">&#8377;50 or 2%</span>
+                    </li>
+                    <li class="d-flex justify-content-between py-2 border-bottom">
+                      <span class="text-muted">Pincode Coverage</span><span class="fw-semibold">35,000+</span>
+                    </li>
+                    <li class="d-flex justify-content-between py-2">
+                      <span class="text-muted">Best for</span
+                      ><span class="fw-semibold text-primary">High-Value / Urgent</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 border qs-courier-card rounded-4">
+                <div class="card-body p-4">
+                  <div class="d-flex justify-content-between align-items-center border-bottom pb-3 mb-3">
+                    <span class="fw-bold fs-6">EKART</span>
+                    <span class="badge rounded-pill qs-badge-pink">Amazon</span>
+                  </div>
+                  <ul class="list-unstyled mb-0 qs-courier-list">
+                    <li class="d-flex justify-content-between py-2 border-bottom">
+                      <span class="text-muted">Starting Rate</span><span class="fw-semibold">&#8377;50 / 500g</span>
+                    </li>
+                    <li class="d-flex justify-content-between py-2 border-bottom">
+                      <span class="text-muted">Per Extra 500g</span><span class="fw-semibold">+&#8377;18</span>
+                    </li>
+                    <li class="d-flex justify-content-between py-2 border-bottom">
+                      <span class="text-muted">Transit Time</span><span class="fw-semibold">2&#8211;4 Days</span>
+                    </li>
+                    <li class="d-flex justify-content-between py-2 border-bottom">
+                      <span class="text-muted">Delivery Speed</span><span class="fw-semibold">Same Day</span>
+                    </li>
+                    <li class="d-flex justify-content-between py-2 border-bottom">
+                      <span class="text-muted">COD Charges</span><span class="fw-semibold">&#8377;30 or 1.5%</span>
+                    </li>
+                    <li class="d-flex justify-content-between py-2 border-bottom">
+                      <span class="text-muted">Pincode Coverage</span><span class="fw-semibold">19,000+</span>
+                    </li>
+                    <li class="d-flex justify-content-between py-2">
+                      <span class="text-muted">Best for</span
+                      ><span class="fw-semibold text-primary">Amazon Sellers</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 border qs-courier-card rounded-4">
+                <div class="card-body p-4">
+                  <div class="d-flex justify-content-between align-items-center border-bottom pb-3 mb-3">
+                    <span class="fw-bold fs-6">DTDC</span>
+                    <span class="badge rounded-pill qs-badge-blue">Widespread</span>
+                  </div>
+                  <ul class="list-unstyled mb-0 qs-courier-list">
+                    <li class="d-flex justify-content-between py-2 border-bottom">
+                      <span class="text-muted">Starting Rate</span><span class="fw-semibold">&#8377;65 / 500g</span>
+                    </li>
+                    <li class="d-flex justify-content-between py-2 border-bottom">
+                      <span class="text-muted">Per Extra 500g</span><span class="fw-semibold">+&#8377;25</span>
+                    </li>
+                    <li class="d-flex justify-content-between py-2 border-bottom">
+                      <span class="text-muted">Transit Time</span><span class="fw-semibold">3&#8211;4 Days</span>
+                    </li>
+                    <li class="d-flex justify-content-between py-2 border-bottom">
+                      <span class="text-muted">Delivery Speed</span><span class="fw-semibold">Next Day</span>
+                    </li>
+                    <li class="d-flex justify-content-between py-2 border-bottom">
+                      <span class="text-muted">COD Charges</span><span class="fw-semibold">&#8377;35 or 1.5%</span>
+                    </li>
+                    <li class="d-flex justify-content-between py-2 border-bottom">
+                      <span class="text-muted">Pincode Coverage</span><span class="fw-semibold">17,000+</span>
+                    </li>
+                    <li class="d-flex justify-content-between py-2">
+                      <span class="text-muted">Best for</span><span class="fw-semibold text-primary">Tier-2 Reach</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 border qs-courier-card rounded-4">
+                <div class="card-body p-4">
+                  <div class="d-flex justify-content-between align-items-center border-bottom pb-3 mb-3">
+                    <span class="fw-bold fs-6">SHADOWFAX</span>
+                    <span class="badge rounded-pill qs-badge-orange">Affordable</span>
+                  </div>
+                  <ul class="list-unstyled mb-0 qs-courier-list">
+                    <li class="d-flex justify-content-between py-2 border-bottom">
+                      <span class="text-muted">Starting Rate</span><span class="fw-semibold">&#8377;45 / 500g</span>
+                    </li>
+                    <li class="d-flex justify-content-between py-2 border-bottom">
+                      <span class="text-muted">Per Extra 500g</span><span class="fw-semibold">+&#8377;18</span>
+                    </li>
+                    <li class="d-flex justify-content-between py-2 border-bottom">
+                      <span class="text-muted">Transit Time</span><span class="fw-semibold">2&#8211;3 Days</span>
+                    </li>
+                    <li class="d-flex justify-content-between py-2 border-bottom">
+                      <span class="text-muted">Delivery Speed</span><span class="fw-semibold">Same Day</span>
+                    </li>
+                    <li class="d-flex justify-content-between py-2 border-bottom">
+                      <span class="text-muted">COD Charges</span><span class="fw-semibold">&#8377;30 or 1%</span>
+                    </li>
+                    <li class="d-flex justify-content-between py-2 border-bottom">
+                      <span class="text-muted">Pincode Coverage</span><span class="fw-semibold">15,000+</span>
+                    </li>
+                    <li class="d-flex justify-content-between py-2">
+                      <span class="text-muted">Best for</span><span class="fw-semibold text-primary">D2C Startups</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p id="dmCourierCardsError" class="text-danger small mt-3 mb-0" style="display:none;"></p>
+        </div>
+      </section>
+
+      <section class="py-5 qs-section-blue">
+        <div class="container-xl">
+          <div class="text-center mb-5">
+            <span class="qs-section-badge-dark mb-3 d-inline-flex align-items-center gap-2"
+              ><span class="qs-dot-yellow-lg"></span>Transit Times</span
+            >
+            <h2 class="qs-section-title text-white mb-3">Delhi to Mumbai Delivery Duration As Per the Transit Mode</h2>
+            <p class="text-white mx-auto lh-base" style="max-width:800px">
+              The delivery time depends on your consignment priority. At QuickShift, you can also choose between
+              same-day or next-day delivery options.
+            </p>
+          </div>
+          <div class="row g-4 mb-4">
+            <div class="col-md-4">
+              <div class="card qs-transit-card h-100 rounded-4 text-center border-0 p-4">
+                <div class="qs-icon-dark mx-auto mb-3">
+                  <img src="/assets/plane.svg" width="24" alt="" />
+                </div>
+                <p class="fw-bold mb-1 text-dark small text-uppercase tracking-wide">AIR EXPRESS</p>
+                <p class="fw-bold fs-3 text-dark mb-2">1-2 DAYS</p>
+                <p class="text-secondary small lh-lg mb-0">
+                  Place a 4-hour delivery order for customers who have specially requested their products urgently.
+                  Delivery partners: BlueDart, Ecom Express Air, Delhivery Air.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card qs-transit-card h-100 rounded-4 text-center border-0 p-4">
+                <div class="qs-icon-dark mx-auto mb-3">
+                  <img src="/assets/route.svg" width="24" alt="" />
+                </div>
+                <p class="fw-bold mb-1 text-dark small text-uppercase">SURFACE TRANSIT</p>
+                <p class="fw-bold fs-3 text-dark mb-2">2-4 DAYS</p>
+                <p class="text-secondary small lh-lg mb-0">
+                  The most commonly chosen shipment route. Partners: Delhivery, Ekart, XpressBees, DTDC, and Shadowfax.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card qs-transit-card h-100 rounded-4 text-center border-0 p-4">
+                <div class="qs-icon-dark mx-auto mb-3">
+                  <img src="/assets/truck-02.svg" width="24" alt="" />
+                </div>
+                <p class="fw-bold mb-1 text-dark small text-uppercase">CARGO AND FREIGHT</p>
+                <p class="fw-bold fs-3 text-dark mb-2">3-6 DAYS</p>
+                <p class="text-secondary small lh-lg mb-0">
+                  Most suitable for heavy goods over 10 kg. Partners: Gati, DPWorld, SafeExpress.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card qs-transit-card rounded-4 border-0">
+            <div class="card-body py-4">
+              <div class="row g-4 text-center">
+                <div class="col-6 col-md-3">
+                  <p class="fw-bold fs-3 text-dark mb-1">2,150</p>
+                  <p class="small text-secondary fw-semibold mb-0 text-uppercase">KM BY ROAD</p>
+                </div>
+                <div class="col-6 col-md-3">
+                  <p class="fw-bold fs-3 text-dark mb-1">1,740</p>
+                  <p class="small text-secondary fw-semibold mb-0 text-uppercase">KM BY AIR</p>
+                </div>
+                <div class="col-6 col-md-3">
+                  <p class="fw-bold fs-3 text-dark mb-1">DELHI &#8594; KA</p>
+                  <p class="small text-secondary fw-semibold mb-0 text-uppercase">INTER-STATE ZONE D</p>
+                </div>
+                <div class="col-6 col-md-3">
+                  <p class="fw-bold fs-3 text-dark mb-1">18%</p>
+                  <p class="small text-secondary fw-semibold mb-0 text-uppercase">GST ON COURIER</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-5 bg-light">
+        <div class="container-xl">
+          <div class="text-center mb-5">
+            <span class="qs-section-badge mb-3 d-inline-flex align-items-center gap-2"
+              ><span class="qs-dot-yellow"></span>How Shipping is Calculated</span
+            >
+            <h2 class="qs-section-title mb-3">
+              <span class="text-primary fw-semibold">How Does QuickShift Calculate </span
+              ><span class="text-dark">Delhi to Mumbai</span
+              ><span class="text-primary fw-semibold"> Parcel Charges? <span> <img src="/assets/zigzagarrow.png"  alt="homeeccom" class="homeEcoomQuick"></span></span>
+            </h2>
+            <p class="text-secondary mx-auto" style="max-width:700px">
+              The shipping charge estimate helps optimise packing and decide which courier partner is right for
+              particular packages
+            </p>
+          </div>
+          <div class="row g-4 mb-5">
+            <div class="col-md-6">
+              <div class="card qs-formula-card h-100 rounded-4 border-0 p-4 text-center">
+                <p class="fw-semibold text-white fs-5 mb-3">&#128208; Volumetric Weight Formula</p>
+                <div class="qs-formula-box rounded-3 px-4 py-3 mb-3">
+                  <p class="mb-0 small text-secondary lh-base">
+                    Volumetric Weight = ( L &times; B &times; H ) &divide; 5000 <br /><em
+                      >Dimensions in cm. Result in kg</em
+                    >
+                  </p>
+                </div>
+                <p class="text-white small mb-0 lh-base">
+                  The courier charges based on whichever is higher — actual weight or volumetric weight. Always measure your packaging carefully to avoid surprises.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card qs-formula-card h-100 rounded-4 border-0 p-4 text-center">
+                <p class="fw-semibold text-white fs-5 mb-3">&#129518; Total Shipping Cost Breakdown</p>
+                <div class="qs-formula-box rounded-3 px-4 py-3 mb-3">
+                  <ul class="list-unstyled mb-0 text-start small text-secondary lh-base">
+                    <li>&#10003; Total = Base Rate + Fuel Surcharge (~10&#8211;12%)</li>
+                    <li>&#10003; + COD Charges (if applicable)</li>
+                    <li>&#10003; + Insurance (optional)</li>
+                    <li>&#10003; + GST (18% on courier)</li>
+                    <li class="text-muted fst-italic mt-1">* ODA surcharge applies for remote pincodes</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
+            <div class="col">
+              <div class="card h-100 border rounded-4 p-3 d-flex flex-row gap-3 align-items-start">
+                <div class="qs-feat-icon flex-shrink-0">
+                  <img src="/assets/globe-05.svg" width="20" alt="" />
+                </div>
+                <div>
+                  <p class="fw-semibold mb-1 small lh-base">Smart Delivery Network</p>
+                  <p class="text-muted mb-0 lh-base" style="font-size:13px">
+                    QuickShift connects you to the most trusted courier partner, covering a wide range of cities without
+                    compromising delivery speed.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 border rounded-4 p-3 d-flex flex-row gap-3 align-items-start">
+                <div class="qs-feat-icon flex-shrink-0">
+                  <img src="/assets/zap-fast.svg" width="20" alt="" />
+                </div>
+                <div>
+                  <p class="fw-semibold mb-1 small lh-base">Intelligent Shipping Rules</p>
+                  <p class="text-muted mb-0 lh-base" style="font-size:13px">
+                    We set customised rules to select the most cost-efficient shipping partner based on restricted time
+                    frames.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 border rounded-4 p-3 d-flex flex-row gap-3 align-items-start">
+                <div class="qs-feat-icon flex-shrink-0">
+                  <img src="/assets/bar-line-chart.svg" width="20" alt="" />
+                </div>
+                <div>
+                  <p class="fw-semibold mb-1 small lh-base">Unified Tracking Dashboard</p>
+                  <p class="text-muted mb-0 lh-base" style="font-size:13px">
+                    Track orders in real-time through a centralised dashboard to analyse performance and make quicker
+                    decisions.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 border rounded-4 p-3 d-flex flex-row gap-3 align-items-start">
+                <div class="qs-feat-icon flex-shrink-0">
+                  <img src="/assets/shield-tick.svg" width="20" alt="" />
+                </div>
+                <div>
+                  <p class="fw-semibold mb-1 small lh-base">Secure &amp; Verified Deliveries</p>
+                  <p class="text-muted mb-0 lh-base" style="font-size:13px">
+                    We offer an OTP-based delivery system for fraud detection to increase customer trust.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 border rounded-4 p-3 d-flex flex-row gap-3 align-items-start">
+                <div class="qs-feat-icon flex-shrink-0">
+                  <img src="/assets/refresh-cw-02.svg" width="20" alt="" />
+                </div>
+                <div>
+                  <p class="fw-semibold mb-1 small lh-base">Automated NDR Management</p>
+                  <p class="text-muted mb-0 lh-base" style="font-size:13px">
+                    An automated workflow to handle non-delivery reports and increase reattempt deliveries.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 border rounded-4 p-3 d-flex flex-row gap-3 align-items-start">
+                <div class="qs-feat-icon flex-shrink-0">
+                  <img src="/assets/activity.svg" width="20" alt="" />
+                </div>
+                <div>
+                  <p class="fw-semibold mb-1 small lh-base">Smart Mode &amp; Cost Optimization</p>
+                  <p class="text-muted mb-0 lh-base" style="font-size:13px">
+                    Our Smart Mode automatically selects from air and surface shipping based on zonal pricing, fuel
+                    surcharges, and weight.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Accurate Billing & Shipment Protection -->
+          <div class="col-12 mt-4">
+              <div class="card h-100 border rounded-4 p-3 d-flex flex-row gap-3 align-items-start">
+                <div class="qs-feat-icon flex-shrink-0">
+                  <img src="/assets/bar-line-chart.svg" width="22" alt="" />
+                </div>
+                <div>
+                  <p class="fw-semibold mb-1 small lh-base">Accurate Billing &amp; Shipment Protection</p>
+                  <p class="text-muted mb-0 lh-base" style="font-size:13px">
+                    Our accurate weight measurement, courier insurance facility, and COD charges transparency help avoid discrepancies.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+
+        </div>
+      </section>
+
+      <section class="py-5 bg-white" id="why-quickshift">
+        <div class="container-xl">
+          <div class="text-center mb-5">
+            <span class="qs-section-badge mb-3 d-inline-flex align-items-center gap-2"
+              ><span class="qs-dot-yellow"></span>Why Choose QuickShift?</span
+            >
+            <h2 class="qs-section-title mb-3">
+              <span class="text-primary fw-semibold">Choose the Most Efficient Courier Service </span
+              ><span class="text-dark">Delhi to Mumbai</span
+              ><span class="text-primary fw-semibold"> with QuickShift <span> <img src="/assets/homeEccom.png"  alt="homeeccom" class="homeEcoomQuick"></span></span>
+            </h2>
+            <p class="text-secondary mx-auto lh-base" style="max-width:860px">
+              Instead of haggling with every courier company, let QuickShift step in and take the charge. We act as your mediator and bring you competitive rates, quick deliveries, and reliability.
+            </p>
+          </div>
+
+          <!-- Desktop static grid (≥1025px) -->
+          <div class="qs-why-desktop-grid" style="display:none">
+            <div class="qs-why-card-wrap">
+              <div class="card w-100 qs-why-card rounded-4 border p-4">
+                <div class="qs-icon-primary mb-3">
+                  <img src="/assets/globe-06.svg" width="20" alt="" />
+                </div>
+                <p class="fw-semibold mb-2 lh-base">Lowest Shipping Rates from Delhi to Mumbai</p>
+                <p class="text-muted small mb-0 lh-base">We have negotiated bulk shipment rates with the top 25 courier partners, so you don&#39;t have to. Save up to 25%. No minimum volume involved.</p>
+              </div>
+            </div>
+            <div class="qs-why-card-wrap">
+              <div class="card w-100 qs-why-card rounded-4 border p-4">
+                <div class="qs-icon-primary mb-3">
+                  <img src="/assets/zap.svg" width="20" alt="" />
+                </div>
+                <p class="fw-semibold mb-2 lh-base">Automated Carrier Selection</p>
+                <p class="text-muted small mb-0 lh-base">Our smart system automatically selects the best and lowest-priced courier partner based on weight, payment mode, and pincode.</p>
+              </div>
+            </div>
+            <div class="qs-why-card-wrap">
+              <div class="card w-100 qs-why-card rounded-4 border p-4">
+                <div class="qs-icon-primary mb-3">
+                  <img src="/assets/globe-06.svg" width="20" alt="" />
+                </div>
+                <p class="fw-semibold mb-2 lh-base">Central Fulfilment Base</p>
+                <p class="text-muted small mb-0 lh-base">Ship directly from QuickShift&#39;s Delhi warehouse. Packages stored before 3PM are shipped the same day.</p>
+              </div>
+            </div>
+            <div class="qs-why-card-wrap">
+              <div class="card w-100 qs-why-card rounded-4 border p-4">
+                <div class="qs-icon-primary mb-3">
+                  <img src="/assets/map-01-1.svg" width="20" alt="" />
+                </div>
+                <p class="fw-semibold mb-2 lh-base">Real-Time Tracking</p>
+                <p class="text-muted small mb-0 lh-base">We provide a dedicated tracking page for your customers and an automated NDR solution to reduce the RTO rate by 30%.</p>
+              </div>
+            </div>
+            <div class="qs-why-card-wrap">
+              <div class="card w-100 qs-why-card rounded-4 border p-4">
+                <div class="qs-icon-primary mb-3">
+                  <img src="/assets/line-chart-up-01.svg" width="20" alt="" />
+                </div>
+                <p class="fw-semibold mb-2 lh-base">COD and Return Order Management</p>
+                <p class="text-muted small mb-0 lh-base">COD collection, remittance, and return orders are managed on a central database for quicker clearances.</p>
+              </div>
+            </div>
+            <div class="qs-why-card-wrap">
+              <div class="card w-100 qs-why-card rounded-4 border p-4">
+                <div class="qs-icon-primary mb-3">
+                  <img src="/assets/webcam-02.svg" width="20" alt="" />
+                </div>
+                <p class="fw-semibold mb-2 lh-base">Begin in 2 Days</p>
+                <p class="text-muted small mb-0 lh-base">Start your shipments from Delhi to Mumbai in just 48 hours without any tech team assistance.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slider wrapper (mobile/tablet only) -->
+          <div class="qs-why-slider-outer position-relative">
+            <!-- Track -->
+            <div class="qs-why-track-wrap">
+              <div class="qs-why-track" id="whyTrack">
+                <!-- Card 1 -->
+                <div class="qs-why-slide">
+                  <div class="card h-100 qs-why-card rounded-4 border p-4">
+                    <div class="qs-icon-primary mb-3">
+                      <img src="/assets/globe-06.svg" width="20" alt="" />
+                    </div>
+                    <p class="fw-semibold mb-2">Lowest Shipping Rates from Delhi to Mumbai</p>
+                    <p class="text-muted small mb-0">
+                      We have negotiated bulk shipment rates with the top 25 courier partners, so you don&#39;t have to.
+                      Save up to 25%. No minimum volume involved.
+                    </p>
+                  </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="qs-why-slide">
+                  <div class="card h-100 qs-why-card rounded-4 border p-4">
+                    <div class="qs-icon-primary mb-3">
+                      <img src="/assets/zap.svg" width="20" alt="" />
+                    </div>
+                    <p class="fw-semibold mb-2">Automated Carrier Selection</p>
+                    <p class="text-muted small mb-0">
+                      Our smart system automatically selects the best and lowest-priced courier partner based on weight,
+                      payment mode, and pincode.
+                    </p>
+                  </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="qs-why-slide">
+                  <div class="card h-100 qs-why-card rounded-4 border p-4">
+                    <div class="qs-icon-primary mb-3">
+                      <img src="/assets/globe-06.svg" width="20" alt="" />
+                    </div>
+                    <p class="fw-semibold mb-2">Central Fulfilment Base</p>
+                    <p class="text-muted small mb-0">
+                      Ship directly from QuickShift&#39;s Delhi warehouse. Packages stored before 3PM are shipped the same
+                      day.
+                    </p>
+                  </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="qs-why-slide">
+                  <div class="card h-100 qs-why-card rounded-4 border p-4">
+                    <div class="qs-icon-primary mb-3">
+                      <img src="/assets/map-01-1.svg" width="20" alt="" />
+                    </div>
+                    <p class="fw-semibold mb-2">Real-Time Tracking</p>
+                    <p class="text-muted small mb-0">
+                      We provide a dedicated tracking page for your customers and an automated NDR solution to reduce the
+                      RTO rate by 30%.
+                    </p>
+                  </div>
+                </div>
+                <!-- Card 5 -->
+                <div class="qs-why-slide">
+                  <div class="card h-100 qs-why-card rounded-4 border p-4">
+                    <div class="qs-icon-primary mb-3">
+                      <img src="/assets/line-chart-up-01.svg" width="20" alt="" />
+                    </div>
+                    <p class="fw-semibold mb-2">COD and Return Order Management</p>
+                    <p class="text-muted small mb-0">
+                      COD collection, remittance, and return orders are managed on a central database for quicker
+                      clearances.
+                    </p>
+                  </div>
+                </div>
+                <!-- Card 6 -->
+                <div class="qs-why-slide">
+                  <div class="card h-100 qs-why-card rounded-4 border p-4">
+                    <div class="qs-icon-primary mb-3">
+                      <img src="/assets/webcam-02.svg" width="20" alt="" />
+                    </div>
+                    <p class="fw-semibold mb-2">Begin in 2 Days</p>
+                    <p class="text-muted small mb-0">
+                      Start your shipments from Delhi to Mumbai in just 48 hours without any tech team assistance.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dot indicators -->
+          <div class="qs-why-dots mt-4" id="whyDots"></div>
+        </div>
+      </section>
+
+      <section class="py-5 qs-faq-section">
+        <div class="container-xl">
+          <!-- Header -->
+          <div class="text-center mb-5">
+            <span class="qs-section-badge mb-3 d-inline-flex align-items-center gap-2 mx-auto">
+              <span class="qs-dot-yellow"></span>FAQ
+            </span>
+            <h2 class="qs-faq-title mb-2">Frequently Asked Questions</h2>
+            <p class="text-secondary mx-auto lh-base" style="max-width:560px;font-size:15px">
+              Everything you need to know about shipping from Delhi to Mumbai with QuickShift.
+            </p>
+          </div>
+
+          <div class="row justify-content-center">
+        <div class="col-12 col-lg-10">
+          <div class="qs-faq">
+            <details class="qs-faq-item" open>
+              <summary>1. What is the basic Delhi to Mumbai shipping cost through QuickShift??</summary>
+              <p>The Delhi to Mumbai shipping cost starts from ₹45 for a 500g parce</p>
+            </details>
+            <details class="qs-faq-item">
+              <summary>2. In how many days can you deliver my parcels from Delhi to Mumbai?</summary>
+              <p>QuickShift matches you with the best courier partner to deliver the parcel next day. It is important for companies to submit their inventory to the Delhi warehouse before 3PM for timely deliveries.</p>
+            </details>
+            <details class="qs-faq-item">
+              <summary>3. Which would be the cheapest courier service from Delhi to Mumbai?</summary>
+              <p>The cheapest courier service from Delhi to Mumbai is Shadowfax, starting from ₹45 for a 500g shipment.</p>
+            </details>
+            <details class="qs-faq-item">
+              <summary>4. Does QuickShift offer a COD option for Delhi to Mumbai shipments?</summary>
+              <p>Yes, QuickShift offers a seamless COD facility for its customers with an additional charge of ₹30–₹50 flat or 1–2% of the order value</p>
+            </details>
+            <details class="qs-faq-item">
+              <summary>5. Which is the fastest delivery option from Delhi to Mumbai?</summary>
+              <p>You can send your couriers through BlueDart for fastest delivery within 48 hours</p>
+            </details>
+            <details class="qs-faq-item">
+              <summary>6. How is Delhi to Mumbai shipping cost calculated?</summary>
+              <p>The shipping cost is calculated as per the volumetric weight or actual weight, whichever is higher</p>
+            </details>
+            <details class="qs-faq-item">
+              <summary>7. What is volumetric weight and how do I calculate it</summary>
+              <p>Volumetric weight is the parcel’s weight as per its dimensions. Its formula is (L x B x H) / 5000.</p>
+            </details>
+            <details class="qs-faq-item">
+              <summary>8. Why is volumetric weight important in shipping?</summary>
+              <p>The shipment charges are calculated on the basis of volumetric or actual weight, whichever is higher. That’s why it is important to measure your parcel to avoid any surprise charges</p>
+            </details>
+            <details class="qs-faq-item">
+              <summary>9. What percentage of fuel surcharge do courier companies typically apply on the base price?</summary>
+              <p>Courier companies typically levy a 10 to 12% of fuel surcharge on the base price.</p>
+            </details>
+            <details class="qs-faq-item">
+              <summary>10. What is the COD (Cash on Delivery) charge range and what is the remittance timeline?</summary>
+              <p>QuickShift accepts cash on delivery orders with an additional charge of ₹30–₹50 flat or 1–2% of the order value. Courier companies take 7 to 14 days for remittance.</p>
+            </details>
+            <details class="qs-faq-item">
+              <summary>11. What is the insurance premium range QuickShift recommends for high-value goods?</summary>
+              <p>QuickShirt recommends 0.5 to 1% insurance for high-value goods, based on their declared shipment value.</p>
+            </details>
+            <details class="qs-faq-item">
+              <summary>12. What is the expected delivery timeline for surface transit shipments from Delhi to Mumbai?</summary>
+              <p>The expected delivery timeline for surface transits is 2 to 3 days, making it an economical option for companies.</p>
+            </details>
+            <details class="qs-faq-item">
+              <summary>13. What is the difference between air and surface shipping?</summary>
+              <p>Air Express is the quickest option, delivering high-value, time-sensitive orders within 1 to 2 days. Surface shipping ships the parcels via road and takes approximately 2 to 4 days for delivery for competitive pricing and non-urgent orders.</p>
+            </details>
+            <details class="qs-faq-item">
+              <summary>14. What is ODA (Out of Delivery Area) charge?</summary>
+              <p>If you want to deliver orders at ODA pincodes in Karnataka, courier partners will levy surcharges of ₹25–₹100 per shipment.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+        </div>
+      </section>
+
+      <section class="py-5 qs-section-blue text-center">
+        <div class="container-xl">
+          <div class="mx-auto" style="max-width:760px">
+            <span class="qs-section-badge-dark mb-3 d-inline-flex align-items-center gap-2 mx-auto"
+              ><span class="qs-dot-yellow-lg"></span>Start Your Orders Today</span
+            >
+            <h2 class="text-white fw-bold mb-3 lh-base" style="font-size:clamp(22px,2.5vw,36px)">
+              Ship from Delhi to Mumbai at Cost-Effective Rates
+            </h2>
+            <p class="text-white mb-4 lh-lg">
+              Are you excited to join 300+ brands? At QuickShift, we take care of everyone from D2C startups to traditional businesses and large-scale companies. Offering flexible plans and taking you live in 48 hours, we can reach your customers quickly.
+            </p>
+            <a href="#" class="btn btn-light rounded-pill px-5 py-2 fw-semibold">Begin Your Conversation</a>
+          </div>
+        </div>
+      </section>

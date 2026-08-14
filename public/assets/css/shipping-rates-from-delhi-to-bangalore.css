@@ -1,0 +1,499 @@
+/* =====================================================
+   BANGALORE.CSS — extra components for Delhi→Bangalore
+   shipping rates page
+   ===================================================== */
+
+/* ── Section subtext ─────────────────────────────────── */
+.section__subtext {
+  max-width: 900px;
+  font-family: "Poppins", Helvetica;
+  font-size: 17px;
+  color: #27364b;
+  text-align: center;
+  line-height: 1.65;
+}
+
+/* ── Mode toggle ─────────────────────────────────────── */
+.mode-toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.mode-toggle {
+  display: inline-flex;
+  border-radius: 100px;
+  overflow: hidden;
+  border: 1px solid #79747e;
+}
+.mode-toggle__btn {
+  padding: 10px 22px;
+  font-family: "Poppins", Helvetica;
+  font-size: 14px;
+  font-weight: 500;
+  background: #fff;
+  color: #414651;
+  border: none;
+  cursor: pointer;
+  transition: background .2s, color .2s;
+}
+.mode-toggle__btn--active {
+  background: #1d22d2;
+  color: #fff;
+}
+.rate-note {
+  font-family: "Poppins", Helvetica;
+  font-size: 14px;
+  color: #535861;
+}
+
+/* ── Rate table ──────────────────────────────────────── */
+.rate-table-wrap {
+  overflow-x: auto;
+  border-radius: 12px;
+  border: 1px solid #d5d6d9;
+}
+.rate-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "Poppins", Helvetica;
+  font-size: 14px;
+  min-width: 640px;
+}
+.rate-table thead tr {
+  background: #fafafa;
+  border-bottom: 2px solid #e9e9eb;
+}
+.rate-table th {
+  padding: 12px 16px;
+  font-weight: 600;
+  color: #414651;
+  text-align: left;
+  white-space: nowrap;
+}
+.rate-table th.best-col { color: #1d22d2; }
+.rate-table td {
+  padding: 14px 16px;
+  color: #252b37;
+  border-bottom: 1px solid #e9e9eb;
+  white-space: nowrap;
+}
+.rate-table tbody tr:last-child td { border-bottom: none; }
+.rate-table tbody tr:hover { background: #f5f7ff; }
+.rate-table td:first-child { font-weight: 600; color: #181d27; }
+.best-price {
+  color: #079455 !important;
+  font-weight: 700 !important;
+}
+
+/* Lowest C1 rate per row (from API) */
+.rate-cell--lowest {
+  color: #067647 !important;
+  font-weight: 700 !important;
+}
+.rate-table__loading,
+.rate-table__empty {
+  text-align: center;
+  color: #535861;
+  font-weight: 500;
+  padding: 24px 16px !important;
+}
+.rate-api-error {
+  margin-top: 12px;
+  font-family: "Poppins", Helvetica;
+  font-size: 14px;
+  color: #b42318;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── Savings info box ────────────────────────────────── */
+.savings-info-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 24px;
+  background: #e9efff;
+  border: 1px solid #d9d9d9;
+  border-radius: 16px;
+}
+.savings-info-box__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.savings-info-box__icon img { width: 24px; height: 24px; }
+.savings-info-box__title {
+  font-family: "Poppins", Helvetica;
+  font-weight: 600;
+  font-size: 16px;
+  color: #0f1a2a;
+  margin-bottom: 6px;
+}
+.savings-info-box__body {
+  font-family: "Poppins", Helvetica;
+  font-size: 14px;
+  color: #27364b;
+  line-height: 1.6;
+}
+
+/* ── Courier cards grid ──────────────────────────────── */
+.courier-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+@media (min-width: 900px) {
+  .courier-cards-grid { grid-template-columns: repeat(3, 1fr); }
+}
+.courier-card {
+  background: #e9efff;
+  border: 1px solid #d9d9d9;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.courier-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #cdd4f0;
+}
+.courier-card__name {
+  font-family: "Poppins", Helvetica;
+  font-weight: 700;
+  font-size: 16px;
+  color: #1e1e1e;
+}
+.courier-badge {
+  padding: 3px 10px;
+  border-radius: 9999px;
+  font-family: "Poppins", Helvetica;
+  font-size: 12px;
+  font-weight: 500;
+}
+.courier-badge--orange { background: #fef6ee; color: #b93814; }
+.courier-badge--green  { background: #cff7d3; color: #009951; }
+.courier-badge--purple { background: #eaddff; color: #6750a4; }
+.courier-badge--pink   { background: #ffd8e4; color: #7a1034; }
+.courier-badge--blue   { background: #e0f0ff; color: #007aff; }
+
+.courier-card__rows { display: flex; flex-direction: column; gap: 10px; }
+.courier-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #dde2f4;
+  font-family: "Poppins", Helvetica;
+  font-size: 14px;
+}
+.courier-row:last-child { border-bottom: none; }
+.courier-row span { color: #1e1e1e; }
+.courier-row strong { color: #1e1e1e; font-weight: 600; }
+.courier-row--highlight strong { color: #1d22d2; }
+
+/* ── Transit cards ───────────────────────────────────── */
+.transit-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+@media (min-width: 900px) {
+  .transit-cards { grid-template-columns: repeat(3, 1fr); }
+}
+.transit-card {
+  background: #e9efff;
+  border: 1px solid #757575;
+  border-radius: 16px;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+  backdrop-filter: blur(5px);
+}
+.transit-card__icon {
+  width: 48px; height: 48px;
+  background: #1d22d2;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid #d9d9d9;
+}
+.transit-card__icon img { width: 24px; height: 24px; filter: brightness(10); }
+.transit-card__mode {
+  font-family: "Poppins", Helvetica;
+  font-weight: 700;
+  font-size: 16px;
+  color: #27364b;
+}
+.transit-card__time {
+  font-family: "Poppins", Helvetica;
+  font-weight: 700;
+  font-size: 28px;
+  color: #1d22d2;
+  line-height: 1;
+}
+.transit-card__desc {
+  font-family: "Poppins", Helvetica;
+  font-size: 14px;
+  color: #27364b;
+  line-height: 1.6;
+}
+
+/* ── Route stats strip ───────────────────────────────── */
+.route-stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* gap: 16px; */
+  border: 1px solid #757575;
+  border-radius: 16px;
+  background: #e9efff;
+}
+.route-stat {
+  flex: 0 0 auto;
+  /* background: #e9efff;
+  border: 1px solid #757575;
+  border-radius: 16px; */
+  padding: 20px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-width: 25%;
+  text-align: center;
+}
+.route-stat__val {
+  font-family: "Poppins", Helvetica;
+  font-weight: 700;
+  font-size: 26px;
+  color: #16181e;
+  line-height: 1.1;
+}
+.route-stat__lbl {
+  font-family: "Poppins", Helvetica;
+  font-weight: 500;
+  font-size: 13px;
+  color: #27364b;
+}
+
+/* ── Courier Charges Calculation Steps ──────────────── */
+.calc-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid #d5d6d9;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.calc-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 24px 28px;
+  border-bottom: 1px solid #e9e9eb;
+  background: #fff;
+  transition: background 0.2s;
+}
+.calc-step:last-child { border-bottom: none; }
+.calc-step:nth-child(even) { background: #f7f8ff; }
+.calc-step:hover { background: #eef1ff; }
+.calc-step__number {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  background: #1d22d2;
+  color: #fff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins", Helvetica;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1;
+}
+.calc-step__content { flex: 1; }
+.calc-step__title {
+  font-family: "Poppins", Helvetica;
+  font-weight: 600;
+  font-size: 16px;
+  color: #181d27;
+  margin: 0 0 6px;
+}
+.calc-step__body {
+  font-family: "Poppins", Helvetica;
+  font-size: 14px;
+  color: #414651;
+  line-height: 1.65;
+  margin: 0;
+}
+.calc-step__body strong { color: #1d22d2; }
+
+/* ── Shipping Calculation Section ───────────────────── */
+
+/* Two info cards side by side */
+.shipping-info-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+@media (max-width: 768px) {
+  .shipping-info-cards { grid-template-columns: 1fr; } 
+}
+
+.shipping-info-card {
+  border-radius: 20px;
+  overflow: hidden;
+  min-height: 340px;
+}
+.shipping-info-card__inner {
+  width: 92%;
+  height: 100%;
+  min-height: 360px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 40px 70px 0px 20px;
+  text-align: center;
+}
+.shipping-info-card__content {
+    position: relative;
+    left: 0px;
+    bottom: 0px;
+}
+.shipping-info-card__title {
+  font-family: "Outfit", Helvetica;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 28px;
+  line-height: 1.2;
+}
+.shipping-info-card__formula {
+  background: #e9efff;
+  border-radius: 12px;
+  padding: 18px 24px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 10px;
+}
+.shipping-info-card__formula p {
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #535862;
+  font-size: 13px;
+  line-height: 1.7;
+  text-align: left;
+}
+.shipping-info-card__note {
+  font-family: "Outfit", Helvetica;
+  font-weight: 400;
+  color: #e9efff;
+  font-size: 14px;
+  line-height: 1.55;
+  margin-top: 10px;
+}
+
+/* Features grid — 2 cols then final row full-width */
+.shipping-features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+@media (max-width: 640px) {
+  .shipping-features-grid { grid-template-columns: 1fr; }
+}
+
+.shipping-feature-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 12px;
+  border-radius: 20px;
+  border: 1px solid #d9d9d9;
+  background: #fff;
+  transition: background 0.2s;
+}
+.shipping-feature-card:hover { background: #f5f7ff; }
+
+.shipping-feature-card--wide {
+  grid-column: 1 / -1;
+}
+
+.shipping-feature-card__icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid #e5e5e5;
+}
+.shipping-feature-card__icon img {
+  width: 24px;
+  height: 24px;
+}
+
+.shipping-feature-card__content {
+  flex: 1;
+  padding-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.shipping-feature-card__title {
+  font-family: "Poppins", Helvetica;
+  font-weight: 600;
+  font-size: 16px;
+  color: #181d27;
+  line-height: 1.4;
+}
+.shipping-feature-card__body {
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  font-size: 14px;
+  color: #535861;
+  line-height: 1.6;
+}
+
+@media (max-width: 640px) {
+  .shipping-info-card__title { font-size: 20px; }
+  .shipping-info-card__formula { padding: 14px 16px; }
+  .shipping-info-card__inner { padding: 28px 20px 0 20px; gap: 16px;min-height: 320px;width: 98%;height: 95%; }
+  .shipping-feature-card--wide { grid-column: 1; }
+}
+
+/* ── Mobile overrides ────────────────────────────────── */
+@media (max-width: 640px) {
+  .section__subtext { font-size: 14px; }
+  .mode-toggle-row { flex-direction: column; align-items: flex-start; }
+  .rate-table { font-size: 12px; }
+  .rate-table th, .rate-table td { padding: 10px 10px; }
+  .courier-cards-grid { grid-template-columns: 1fr; }
+  .transit-cards { grid-template-columns: 1fr; }
+  .route-stats { flex-direction: row; }
+  .route-stat { flex: 1; min-width: 130px; padding: 14px 12px; }
+  .route-stat__val { font-size: 20px; }
+  .savings-info-box { flex-direction: column; }
+}
