@@ -16,7 +16,6 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
 export default buildConfig({
   admin: {
     user: Users.slug,
-    css: path.resolve(dirname, './styles/admin-custom.css'),
   },
   collections: [Users, ShippingRoutePages, Leads],
   editor: lexicalEditor(),
