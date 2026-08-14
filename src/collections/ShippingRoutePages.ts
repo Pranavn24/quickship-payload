@@ -200,7 +200,6 @@ export const ShippingRoutePages: CollectionConfig = {
       label: 'Actions',
       admin: {
         disableListColumn: false,
-        disableListFilter: true,
         components: { Cell: '@/components/admin/RouteActionsCell#RouteActionsCell' },
       },
     },
